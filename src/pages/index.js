@@ -1,5 +1,10 @@
-import React from "react"
+import React from 'react'
+import HeroSlider from '../components/HeroSlider/HeroSlider'
 
-const IndexPage = () => <h1>Hello World</h1>
+const IndexPage = () => (
+  <>
+    <HeroSlider />
+  </>
+)
 
 export default IndexPage
