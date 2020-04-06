@@ -14,6 +14,10 @@ const FooterWrapper = styled.footer`
   text-align: center;
   height: 3rem;
   font-size: 0.8rem;
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+    padding-right: 44px;
+  }
 `
 
 const Footer = () => {

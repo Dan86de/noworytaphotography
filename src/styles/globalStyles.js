@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  @import url("https://use.typekit.net/xws6uis.css");
   html
   {
     box-sizing: border-box;
@@ -19,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat';
     color: #384f47;
     position: relative;
+    height: 100%;
   }
 
   ul {

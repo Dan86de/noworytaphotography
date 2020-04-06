@@ -3,10 +3,13 @@ import styled from 'styled-components'
 
 import GlobalStyle from '../styles/globalStyles'
 import Navigation from '../components/Navigation/Navigation'
-import Footer from '../components/Footer/Footer'
+// import Footer from '../components/Footer/Footer'
 
 const ContentWrapper = styled.div`
-  padding: 0 16px;
+  margin: 0 16px;
+  @media (min-width: 768px) {
+    margin: 0 44px;
+  }
 `
 
 const MainLayout = ({ children }) => (
@@ -14,7 +17,7 @@ const MainLayout = ({ children }) => (
     <GlobalStyle />
     <Navigation />
     <ContentWrapper>{children}</ContentWrapper>
-    <Footer />
+    {/* <Footer /> */}
   </>
 )
 
