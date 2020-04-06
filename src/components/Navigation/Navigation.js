@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
+import Image from 'gatsby-image'
 
 import { Link } from 'gatsby'
 
@@ -8,6 +10,7 @@ const NavigationWrapper = styled.nav`
   color: #384f47;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5rem 1rem;
   font-family: 'Montserrat';
   background-color: white;
 `
@@ -15,6 +18,9 @@ const NavigationWrapper = styled.nav`
 const NavigationList = styled.ul`
   display: none;
   list-style: none;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `
 
 const NavigationItem = styled.li`
@@ -27,10 +33,43 @@ const NavigationItem = styled.li`
   }
 `
 
+const LogoImage = styled(Image)`
+  width: 50px;
+`
+
+const HamburgerIcon = styled(Image)`
+  width: 35px;
+`
+
+const query = graphql`
+  {
+    allFile(filter: { extension: { regex: "/(png)/" } }) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            fluid(maxWidth: 80) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
 const Navigation = () => {
+  const iconsData = useStaticQuery(query)
+
   return (
     <NavigationWrapper>
-      <h1>Logo</h1>
+      <LogoImage
+        fluid={iconsData.allFile.edges[1].node.childImageSharp.fluid}
+      />
+      <HamburgerIcon
+        fluid={iconsData.allFile.edges[0].node.childImageSharp.fluid}
+      />
       <NavigationList>
         <NavigationItem>
           <Link to="/">Home</Link>

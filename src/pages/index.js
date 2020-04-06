@@ -1,8 +1,10 @@
 import React from 'react'
 import HeroSlider from '../components/HeroSlider/HeroSlider'
+import SiteMetadata from '../components/SiteMetadata/SiteMetadata'
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <>
+    <SiteMetadata />
     <HeroSlider />
   </>
 )
