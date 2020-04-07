@@ -32,17 +32,26 @@ const HeroSliderTextWrapper = styled.div`
   top: 55%;
   left: 0;
   z-index: 3;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   text-align: center;
   @media (min-width: 768px) {
     top: 0;
     left: 0;
-    width: 48%;
+    width: 49%;
     height: 100%;
+    justify-content: center;
+    padding-left: 2rem;
   }
   @media (min-width: 1280px) {
     width: 43%;
+    padding-left: 5rem;
+  }
+  @media (min-width: 1920px) {
+    padding-left: 9rem;
   }
 `
 
@@ -50,27 +59,18 @@ const HeroBigText = styled.h1`
   font-size: 2.5rem;
   font-family: ff-market-web;
   font-weight: 700;
-  margin: 0 auto;
   line-height: 1.1;
   @media (min-width: 768px) {
-    position: absolute;
     text-align: left;
-    width: 140%;
-    top: 200px;
-    left: 57px;
     font-size: 4rem;
-    z-index: 4;
+    width: 140%;
   }
   @media (min-width: 1280px) {
-    top: 230px;
-    left: 100px;
-    width: 80%;
+    width: 90%;
     font-size: 3rem;
   }
   @media (min-width: 1920px) {
-    top: 300px;
-    left: 200px;
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 `
 
@@ -78,28 +78,22 @@ const HeroSmallText = styled.p`
   font-family: 'Montserrat';
   font-weight: 400;
   line-height: 1.2;
-  padding: 0 1rem;
+  padding: 0 2rem;
   font-size: 0.9rem;
   @media (min-width: 768px) {
-    position: absolute;
     text-align: left;
-    top: 400px;
-    left: 44px;
-    font-size: 1.5rem;
-    z-index: 4;
-    width: 90%;
-    display: block;
+    width: 85%;
+    font-size: 1.25rem;
     line-height: 1.4;
+    padding: 0;
+    margin-top: 1rem;
   }
   @media (min-width: 1280px) {
-    top: 350px;
-    left: 85px;
-    width: 70%;
+    margin-top: 1.5rem;
   }
   @media (min-width: 1920px) {
-    top: 475px;
-    left: 190px;
-    font-size: 2rem;
+    width: 75%;
+    font-size: 1.75rem;
   }
 `
 
@@ -139,11 +133,7 @@ const HandIcon = styled.div`
   background-position: center;
   margin: 0 auto;
   @media (min-width: 768px) {
-    width: 4rem;
-    height: 4rem;
-    position: absolute;
-    top: 90%;
-    left: 40%;
+    display: none;
   }
   @media (min-width: 1280px) {
     display: none;

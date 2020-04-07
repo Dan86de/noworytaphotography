@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import PhotoCollage from '../PhotoCollage/PhotoCollage'
 
 const AboutSectionWrapper = styled.section`
   position: absolute;
@@ -154,18 +153,6 @@ const AboutTextBiScreensWrapper = styled.div`
     }
   }
 `
-
-const PhotoCollageWrrapper = styled.div`
-  position: absolute;
-  top: 200vh;
-  left: 10%;
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-`
-
 const query = graphql`
   {
     allFile(filter: { absolutePath: { regex: "/AboutImages/" } }) {
@@ -212,9 +199,6 @@ const AboutSection = () => {
 
         <AboutTextMid>"the devil is in the detail"</AboutTextMid>
       </AboutSectionWrapper>
-      <PhotoCollageWrrapper>
-        <PhotoCollage />
-      </PhotoCollageWrrapper>
     </>
   )
 }

@@ -16,14 +16,14 @@ const NavigationWrapper = styled.nav`
   background-color: white;
   overflow: hidden;
   @media (min-width: 768px) {
-    margin: 0 44px;
+    margin: 0 2rem;
     background-color: transparent;
   }
   @media (min-width: 1280px) {
-    margin: 0 95px;
+    margin: 0 5rem;
   }
   @media (min-width: 1920px) {
-    margin: 0 192px;
+    margin: 0 8rem;
   }
 `
 
