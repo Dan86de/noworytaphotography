@@ -27,9 +27,9 @@ const HeroSliderImageWrapper = styled.div`
 
 const HeroSliderTextWrapper = styled.div`
   width: 100%;
-  height: 40%;
+  height: 45%;
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 0;
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.85);
@@ -41,6 +41,9 @@ const HeroSliderTextWrapper = styled.div`
     width: 45%;
     height: 100%;
   }
+  @media (min-width: 1280px) {
+    width: 43%;
+  }
 `
 
 const HeroBigText = styled.h1`
@@ -48,15 +51,26 @@ const HeroBigText = styled.h1`
   font-family: ff-market-web;
   font-weight: 700;
   margin: 0 auto;
-  line-height: 1.2;
+  line-height: 1.1;
   @media (min-width: 768px) {
     position: absolute;
     text-align: left;
     width: 140%;
     top: 200px;
     left: 57px;
-    font-size: 3.5rem;
+    font-size: 4rem;
     z-index: 4;
+  }
+  @media (min-width: 1280px) {
+    top: 230px;
+    left: 100px;
+    width: 80%;
+    font-size: 3rem;
+  }
+  @media (min-width: 1920px) {
+    top: 300px;
+    left: 200px;
+    font-size: 5rem;
   }
 `
 
@@ -65,6 +79,7 @@ const HeroSmallText = styled.p`
   font-weight: 400;
   line-height: 1.2;
   padding: 0 1rem;
+  font-size: 0.9rem;
   @media (min-width: 768px) {
     position: absolute;
     text-align: left;
@@ -72,6 +87,18 @@ const HeroSmallText = styled.p`
     left: 44px;
     font-size: 1.5rem;
     z-index: 4;
+    width: 90%;
+    display: block;
+  }
+  @media (min-width: 1280px) {
+    top: 350px;
+    left: 85px;
+    width: 70%;
+  }
+  @media (min-width: 1920px) {
+    top: 475px;
+    left: 190px;
+    font-size: 2rem;
   }
 `
 
@@ -85,6 +112,20 @@ const HeroSmallTextSpan = styled.span`
     border: 3px solid #7a8984;
     width: 100%;
     z-index: -1;
+    @media (min-width: 768px) {
+      bottom: 8px;
+      width: 95%;
+      border: 4px solid #7a8984;
+    }
+    @media (min-width: 1280px) {
+      bottom: 5px;
+      width: 90%;
+    }
+    @media (min-width: 1920px) {
+      bottom: 10px;
+      border: 5px solid #7a8984;
+      width: 90%;
+    }
   }
 `
 
@@ -97,6 +138,13 @@ const HandIcon = styled.div`
   background-position: center;
   margin: 0 auto;
   @media (min-width: 768px) {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 90%;
+    left: 40%;
+  }
+  @media (min-width: 1280px) {
     display: none;
   }
 `

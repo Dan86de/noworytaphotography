@@ -10,18 +10,44 @@ const AboutSectionWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 0 1rem;
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 3rem;
+  }
 `
 
 const AboutTextBig = styled.h2`
+  margin: 1rem auto;
   font-size: 2.5rem;
   font-family: ff-market-web;
   font-weight: 700;
-  margin: 0 auto;
   line-height: 1.2;
   display: block;
   width: 80%;
   text-align: center;
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+    width: 50%;
+    margin-right: 1rem;
+  }
+`
+
+const AboutTextBigAbout = styled.h2`
+  display: none;
+  margin: 3rem 0 2rem 0;
+  @media (min-width: 768px) {
+    display: block;
+    font-size: 3.5rem;
+    font-family: ff-market-web;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 100%;
+    align-self: flex-start;
+  }
 `
 
 const AboutTextMid = styled.h3`
@@ -30,15 +56,11 @@ const AboutTextMid = styled.h3`
   font-weight: 700;
   margin: 0 auto;
   line-height: 1.2;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
 `
-
-const AboutTextSmall = styled.p`
-  font-size: 0.75rem;
-  text-align: center;
-  padding: 1rem 1rem;
-  line-height: 1.5;
-`
-
 const AboutImageWrapper = styled.div`
   width: 260px;
   height: 350px;
@@ -47,7 +69,33 @@ const AboutImageWrapper = styled.div`
   background-size: cover;
   background-position: center;
   z-index: 5;
-  margin: 1rem auto;
+  @media (min-width: 768px) {
+    margin-left: 3rem;
+    position: relative;
+    &::after {
+      content: 'About';
+      position: absolute;
+      top: 0;
+      left: -90%;
+      font-size: 28rem;
+      opacity: 0.1;
+      font-family: ff-market-web;
+      z-index: -3;
+      letter-spacing: 2rem;
+      transform: rotate(-40deg);
+    }
+  }
+`
+
+const AboutTextSmall = styled.p`
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 1rem 1rem;
+  line-height: 1.5;
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+    padding: 2rem 2rem;
+  }
 `
 
 const query = graphql`
@@ -69,6 +117,7 @@ const AboutSection = () => {
   return (
     <>
       <AboutSectionWrapper id="about">
+        <AboutTextBigAbout>About</AboutTextBigAbout>
         <AboutTextBig>Hi my name is Kasia</AboutTextBig>
         <AboutImageWrapper
           bgImage={imageData.allFile.nodes[0].childImageSharp.original.src}

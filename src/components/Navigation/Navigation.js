@@ -19,6 +19,9 @@ const NavigationWrapper = styled.nav`
     margin: 0 44px;
     background-color: transparent;
   }
+  @media (min-width: 1280px) {
+    margin: 0 95px;
+  }
   @media (min-width: 1920px) {
     margin: 0 192px;
   }
@@ -40,7 +43,7 @@ const NavigationItem = styled.li`
     text-decoration: none;
     font-weight: 700;
     position: relative;
-    @media (min-width: 1024px) {
+    @media (min-width: 1280px) {
       font-size: 1.25rem;
     }
   }
@@ -54,6 +57,13 @@ const NavigationItem = styled.li`
     color: inherited;
     z-index: 4;
     border-radius: 3px;
+    @media (min-width: 1280px) {
+      top: 1.8rem;
+    }
+    @media (min-width: 1920px) {
+      top: 1.7rem;
+      transform: translateY(2px);
+    }
   }
 `
 
@@ -64,7 +74,7 @@ const LogoImage = styled(Image)`
     top: 8px;
     left: 0;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     width: 80px;
   }
 `
@@ -80,7 +90,7 @@ const NavigationStatusBar = styled.span`
     margin-left: 5rem;
     border: 1px solid #384f47;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     margin-left: 7rem;
   }
 `
