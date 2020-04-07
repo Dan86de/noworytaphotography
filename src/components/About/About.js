@@ -18,6 +18,10 @@ const AboutSectionWrapper = styled.section`
     justify-content: space-between;
     padding: 0 3rem;
   }
+  @media (min-width: 1280px) {
+    flex-direction: row;
+    padding: 0 6rem;
+  }
 `
 
 const AboutTextBig = styled.h2`
@@ -34,6 +38,9 @@ const AboutTextBig = styled.h2`
     width: 50%;
     margin-right: 1rem;
   }
+  @media (min-width: 1280px) {
+    display: none;
+  }
 `
 
 const AboutTextBigAbout = styled.h2`
@@ -48,6 +55,10 @@ const AboutTextBigAbout = styled.h2`
     width: 100%;
     align-self: flex-start;
   }
+  @media (min-width: 1280px) {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
 `
 
 const AboutTextMid = styled.h3`
@@ -59,6 +70,9 @@ const AboutTextMid = styled.h3`
   @media (min-width: 768px) {
     font-size: 3rem;
     margin-bottom: 1rem;
+  }
+  @media (min-width: 1280px) {
+    display: none;
   }
 `
 const AboutImageWrapper = styled.div`
@@ -83,7 +97,21 @@ const AboutImageWrapper = styled.div`
       z-index: -3;
       letter-spacing: 2rem;
       transform: rotate(-40deg);
+      @media (min-width: 1280px) {
+        transform: rotate(15deg);
+        top: -70%;
+        left: -110%;
+        font-size: 40rem;
+      }
+      @media (min-width: 1920px) {
+        display: none;
+      }
     }
+  }
+  @media (min-width: 1280px) {
+    margin-left: 7rem;
+    width: 310px;
+    height: 400px;
   }
 `
 
@@ -95,6 +123,34 @@ const AboutTextSmall = styled.p`
   @media (min-width: 768px) {
     font-size: 1.25rem;
     padding: 2rem 2rem;
+  }
+  @media (min-width: 1280px) {
+    display: none;
+  }
+`
+
+const AboutTextBiScreensWrapper = styled.div`
+  display: none;
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-right: 3rem;
+    h1 {
+      font-family: ff-market-web;
+      font-size: 4rem;
+      margin-top: 0;
+    }
+    h2 {
+      font-family: ff-market-web;
+      font-size: 3rem;
+      text-align: center;
+    }
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
   }
 `
 
@@ -122,6 +178,18 @@ const AboutSection = () => {
         <AboutImageWrapper
           bgImage={imageData.allFile.nodes[0].childImageSharp.original.src}
         />
+        <AboutTextBiScreensWrapper>
+          <h1>Hi My name is Kasia</h1>
+          <p>
+            {' '}
+            I would like to tell you about my passion. I'm interior
+            photographer. I'm doing this because every interior its unique in
+            its own way and worth photographing. I would like to show you how to
+            tell your interior story by using my camera. In my work I'm trying
+            to pay attention to every detail, because
+          </p>
+          <h2>"the devil is in the detail"</h2>
+        </AboutTextBiScreensWrapper>
         <AboutTextSmall>
           I would like to tell you about my passion. I'm interior photographer.
           I'm doing this because every interior its unique in its own way and
