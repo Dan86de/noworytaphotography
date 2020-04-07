@@ -38,7 +38,7 @@ const HeroSliderTextWrapper = styled.div`
   @media (min-width: 768px) {
     top: 0;
     left: 0;
-    width: 45%;
+    width: 48%;
     height: 100%;
   }
   @media (min-width: 1280px) {
@@ -89,6 +89,7 @@ const HeroSmallText = styled.p`
     z-index: 4;
     width: 90%;
     display: block;
+    line-height: 1.4;
   }
   @media (min-width: 1280px) {
     top: 350px;
