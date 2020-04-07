@@ -173,7 +173,7 @@ const HeroSlider = () => {
     <>
       <HeroSliderWrapper>
         <HeroSliderImageWrapper
-          bgImage={imagesData.allFile.nodes[0].childImageSharp.original.src}
+          bgImage={imagesData.allFile.nodes[1].childImageSharp.original.src}
         />
         <HeroSliderTextWrapper>
           <HeroBigText>
@@ -185,7 +185,7 @@ const HeroSlider = () => {
             show this in a best possible way.
           </HeroSmallText>
           <HandIcon
-            bgImage={imagesData.allFile.nodes[1].childImageSharp.original.src}
+            bgImage={imagesData.allFile.nodes[0].childImageSharp.original.src}
           />
         </HeroSliderTextWrapper>
       </HeroSliderWrapper>

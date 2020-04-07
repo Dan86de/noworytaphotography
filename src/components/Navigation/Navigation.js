@@ -127,7 +127,7 @@ const Navigation = () => {
     <NavigationWrapper>
       <Link to="/">
         <LogoImage
-          fluid={iconsData.allFile.edges[1].node.childImageSharp.fluid}
+          fluid={iconsData.allFile.edges[2].node.childImageSharp.fluid}
         />
       </Link>
       <NavigationStatusBar />
