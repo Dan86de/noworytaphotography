@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 const AboutSectionWrapper = styled.section`
   position: absolute;
@@ -11,6 +12,7 @@ const AboutSectionWrapper = styled.section`
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
+  overflow: hidden;
   @media (min-width: 768px) {
     flex-direction: row-reverse;
     padding: 0;
@@ -46,6 +48,32 @@ const AboutTextBig = styled.h2`
 const AboutTextBigAbout = styled.h2`
   display: none;
   margin: 3rem 0 2rem 0;
+  &::after {
+    display: block !important;
+    content: 'About';
+    position: absolute;
+    top: 20%;
+    left: -20%;
+    font-size: 28rem;
+    opacity: 0.1;
+    font-family: ff-market-web;
+    z-index: -3;
+    letter-spacing: 2rem;
+    transform: rotate(-40deg);
+    @media (min-width: 1280px) {
+      transform: rotate(15deg);
+      top: -10%;
+      left: -15%;
+      font-size: 40rem;
+      letter-spacing: 4.25rem;
+    }
+    @media (min-width: 1920px) {
+      top: -10%;
+      left: -15%;
+      font-size: 60rem;
+      letter-spacing: 5rem;
+    }
+  }
   @media (min-width: 768px) {
     display: block;
     font-size: 3.5rem;
@@ -56,8 +84,9 @@ const AboutTextBigAbout = styled.h2`
     align-self: flex-start;
   }
   @media (min-width: 1280px) {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
     font-size: 4rem;
-    margin-bottom: 0;
   }
 `
 
@@ -75,7 +104,8 @@ const AboutTextMid = styled.h3`
     display: none;
   }
 `
-const AboutImageWrapper = styled.div`
+const AboutImageWrapper = styled(Img)`
+  display: block !important;
   width: 260px;
   height: 350px;
   background-image: url(${({ bgImage }) => bgImage});
@@ -86,32 +116,16 @@ const AboutImageWrapper = styled.div`
   @media (min-width: 768px) {
     margin-left: 3rem;
     position: relative;
-    &::after {
-      content: 'About';
-      position: absolute;
-      top: 0;
-      left: -90%;
-      font-size: 28rem;
-      opacity: 0.1;
-      font-family: ff-market-web;
-      z-index: -3;
-      letter-spacing: 2rem;
-      transform: rotate(-40deg);
-      @media (min-width: 1280px) {
-        transform: rotate(15deg);
-        top: -70%;
-        left: -110%;
-        font-size: 40rem;
-      }
-      @media (min-width: 1920px) {
-        display: none;
-      }
-    }
   }
   @media (min-width: 1280px) {
-    margin-left: 7rem;
-    width: 310px;
-    height: 400px;
+    margin-left: 4rem;
+  }
+  @media (min-width: 1920px) {
+    margin-top: 3rem;
+    margin-left: 10rem;
+    margin-bottom: 7rem;
+    width: 475px;
+    height: 650px;
   }
 `
 
@@ -140,27 +154,43 @@ const AboutTextBiScreensWrapper = styled.div`
     h1 {
       font-family: ff-market-web;
       font-size: 4rem;
-      margin-top: 0;
+      margin: 2rem;
     }
     h2 {
       font-family: ff-market-web;
       font-size: 3rem;
       text-align: center;
+      margin: 2rem;
     }
     p {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       line-height: 1.6;
+      width: 110%;
+      text-align: justify;
+    }
+  }
+  @media (min-width: 1920px) {
+    width: 40%;
+    margin-right: 12rem;
+    h1 {
+      font-size: 5rem;
+      margin: 0rem auto 4rem auto;
+    }
+    h2 {
+      font-size: 4rem;
+      margin: 4rem auto;
+    }
+    p {
+      font-size: 1.5rem;
     }
   }
 `
 const query = graphql`
   {
-    allFile(filter: { absolutePath: { regex: "/AboutImages/" } }) {
-      nodes {
-        childImageSharp {
-          original {
-            src
-          }
+    file(name: { regex: "/kate_bw/" }) {
+      childImageSharp {
+        fluid(maxWidth: 475, maxHeight: 650, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
@@ -174,9 +204,7 @@ const AboutSection = () => {
       <AboutSectionWrapper id="about">
         <AboutTextBigAbout>About</AboutTextBigAbout>
         <AboutTextBig>Hi my name is Kasia</AboutTextBig>
-        <AboutImageWrapper
-          bgImage={imageData.allFile.nodes[0].childImageSharp.original.src}
-        />
+        <AboutImageWrapper fluid={imageData.file.childImageSharp.fluid} />
         <AboutTextBiScreensWrapper>
           <h1>Hi My name is Kasia</h1>
           <p>

@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation/Navigation'
 
 const ContentWrapper = styled.div`
   margin: 0 16px;
+  overflow: hidden;
   @media (min-width: 768px) {
     margin: 0 44px;
   }
