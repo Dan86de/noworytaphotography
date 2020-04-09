@@ -3,13 +3,14 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const HeroSliderWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
   z-index: -1;
   @media (min-width: 768px) {
+  }
+  @media (min-width: 1280px) {
+  }
+  @media (min-width: 1920px) {
   }
 `
 
@@ -17,7 +18,6 @@ const HeroSliderImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  transform: scaleX(-1);
   background-image: url(${({ bgImage }) => bgImage});
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,25 +33,25 @@ const HeroSliderTextWrapper = styled.div`
   left: 0;
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
+  padding: 1.5rem 1rem;
   @media (min-width: 768px) {
     top: 0;
     left: 0;
-    width: 49%;
+    width: 48%;
     height: 100%;
     justify-content: center;
-    padding-left: 2rem;
+    padding-left: 2.75rem;
   }
   @media (min-width: 1280px) {
     width: 43%;
-    padding-left: 5rem;
+    padding-left: 7rem;
   }
   @media (min-width: 1920px) {
-    padding-left: 9rem;
+    padding-left: 12rem;
   }
 `
 
@@ -60,10 +60,13 @@ const HeroBigText = styled.h1`
   font-family: ff-market-web;
   font-weight: 700;
   line-height: 1.1;
+  margin: 0;
+  padding: 0;
   @media (min-width: 768px) {
     text-align: left;
     font-size: 4rem;
-    width: 140%;
+    width: 150%;
+    line-height: 1.2;
   }
   @media (min-width: 1280px) {
     width: 90%;
@@ -77,12 +80,12 @@ const HeroBigText = styled.h1`
 const HeroSmallText = styled.p`
   font-family: 'Montserrat';
   font-weight: 400;
-  line-height: 1.2;
-  padding: 0 2rem;
   font-size: 0.9rem;
+  margin: 0;
+  padding: 0 2rem;
   @media (min-width: 768px) {
     text-align: left;
-    width: 85%;
+    width: 100%;
     font-size: 1.25rem;
     line-height: 1.4;
     padding: 0;
@@ -90,9 +93,9 @@ const HeroSmallText = styled.p`
   }
   @media (min-width: 1280px) {
     margin-top: 1.5rem;
+    width: 80%;
   }
   @media (min-width: 1920px) {
-    width: 75%;
     font-size: 1.75rem;
   }
 `
@@ -164,20 +167,21 @@ const HeroSlider = () => {
       <HeroSliderWrapper>
         <HeroSliderImageWrapper
           bgImage={imagesData.allFile.nodes[1].childImageSharp.original.src}
-        />
-        <HeroSliderTextWrapper>
-          <HeroBigText>
-            Let me capture your Interior{' '}
-            <HeroSmallTextSpan>Passion</HeroSmallTextSpan>
-          </HeroBigText>
-          <HeroSmallText>
-            I love to see what other`s do with their living places and I want to
-            show this in a best possible way.
-          </HeroSmallText>
-          <HandIcon
-            bgImage={imagesData.allFile.nodes[0].childImageSharp.original.src}
-          />
-        </HeroSliderTextWrapper>
+        >
+          <HeroSliderTextWrapper>
+            <HeroBigText>
+              Let me capture your Interior{' '}
+              <HeroSmallTextSpan>Passion</HeroSmallTextSpan>
+            </HeroBigText>
+            <HeroSmallText>
+              I love to see what other`s do with their living places and I want
+              to show this in a best possible way.
+            </HeroSmallText>
+            <HandIcon
+              bgImage={imagesData.allFile.nodes[0].childImageSharp.original.src}
+            />
+          </HeroSliderTextWrapper>
+        </HeroSliderImageWrapper>
       </HeroSliderWrapper>
     </>
   )

@@ -6,24 +6,27 @@ import Image from 'gatsby-image'
 import { Link } from 'gatsby'
 
 const NavigationWrapper = styled.nav`
-  position: relative;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
-  color: #384f47;
   justify-content: space-between;
   align-items: center;
   padding: 0.25rem 1rem;
   font-family: 'Montserrat';
-  background-color: white;
-  overflow: hidden;
+  color: #384f47;
+  /* background-color: white; */
+  z-index: 22;
   @media (min-width: 768px) {
-    margin: 0 2rem;
+    padding: 0 2.75rem;
     background-color: transparent;
   }
   @media (min-width: 1280px) {
-    margin: 0 5rem;
+    padding: 0 7rem;
   }
   @media (min-width: 1920px) {
-    margin: 0 8rem;
+    padding: 0 12rem;
   }
 `
 
@@ -35,7 +38,7 @@ const NavigationList = styled.ul`
   }
 `
 
-const NavigationItem = styled.li`
+const NavigationListItem = styled.li`
   padding: 0 1.25rem 1.25rem 1.25rem;
   font-size: 1rem;
   a {
@@ -70,28 +73,12 @@ const NavigationItem = styled.li`
 const LogoImage = styled(Image)`
   width: 50px;
   @media (min-width: 768px) {
-    position: absolute;
-    top: 8px;
-    left: 0;
   }
   @media (min-width: 1280px) {
+    width: 60px;
+  }
+  @media (min-width: 1920px) {
     width: 80px;
-  }
-`
-
-const NavigationStatusBar = styled.span`
-  @media (min-width: 768px) {
-    position: absolute;
-    top: calc(50% + 8px);
-    left: 0;
-    width: 100%;
-    color: #384f47;
-    background-color: #384f47;
-    margin-left: 5rem;
-    border: 1px solid #384f47;
-  }
-  @media (min-width: 1280px) {
-    margin-left: 7rem;
   }
 `
 
@@ -130,31 +117,30 @@ const Navigation = () => {
           fluid={iconsData.allFile.edges[2].node.childImageSharp.fluid}
         />
       </Link>
-      <NavigationStatusBar />
       <HamburgerIcon
         fluid={iconsData.allFile.edges[0].node.childImageSharp.fluid}
       />
       <NavigationList>
-        <NavigationItem>
+        <NavigationListItem>
           <Link to="/" activeClassName="linkActive">
             Home
           </Link>
-        </NavigationItem>
-        <NavigationItem>
+        </NavigationListItem>
+        <NavigationListItem>
           <Link to="#about" activeClassName="linkActive">
             About
           </Link>
-        </NavigationItem>
-        <NavigationItem>
+        </NavigationListItem>
+        <NavigationListItem>
           <Link to="/portfolio" activeClassName="linkActive">
             Portfolio
           </Link>
-        </NavigationItem>
-        <NavigationItem>
+        </NavigationListItem>
+        <NavigationListItem>
           <Link to="#contact" activeClassName="linkActive">
             Contact
           </Link>
-        </NavigationItem>
+        </NavigationListItem>
       </NavigationList>
     </NavigationWrapper>
   )
