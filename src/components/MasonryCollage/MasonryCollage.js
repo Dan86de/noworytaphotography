@@ -1,27 +1,78 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
+
+const GalleryContainer = styled.div`
+  width: 100%;
+`
+
+const MasonryTextBig = styled.h1`
+  font-family: ff-market-web;
+  font-size: 2.5rem;
+  text-align: center;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 1280px) {
+    font-size: 3.5rem;
+  }
+  @media (min-width: 1920px) {
+    font-size: 4rem;
+  }
+`
 
 const GridContainer = styled.div`
-  position: absolute;
-  top: 200vh;
-  left: 5%;
-  width: 90%;
+  margin: 0 auto;
+  width: 80%;
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-auto-rows: 200px;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-auto-rows: 80px;
+  justify-items: stretch;
+  align-items: stretch;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `
 
-const ImageContainer = styled(Img)`
-  display: block !important;
+const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
+  background-image: url(${({ bgImage }) => bgImage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  @media (min-width: 768px) {
+  }
+  @media (min-width: 1280px) {
+  }
+  @media (min-width: 1920px) {
+  }
+`
+const ItemContainer = styled.div`
+  overflow: hidden;
+  grid-row: span ${({ h }) => h};
+  @media (min-width: 768px) {
+  }
 `
 
-const ImageContainerSpan2 = styled(ImageContainer)`
-  grid-row-end: span 2;
+const PortfolioButton = styled.button`
+  background-color: #384f47;
+  color: white;
+  border: none;
+  margin: 2rem auto;
+  padding: 0.25rem 4rem;
+  font-size: 1.5rem;
+  font-family: ff-market-web;
+  display: block;
 `
 
 const query = graphql`
@@ -31,7 +82,7 @@ const query = graphql`
         id
         childImageSharp {
           fluid(maxWidth: 320, maxHeight: 410, quality: 100) {
-            ...GatsbyImageSharpFluid_tracedSVG
+            src
           }
         }
       }
@@ -41,30 +92,31 @@ const query = graphql`
 
 const MasonryCollage = () => {
   const imageData = useStaticQuery(query)
-  const imageElements = imageData.allFile.nodes.map((item, id) => {
-    if (id === 1 || id === 5 || id === 7 || id === 10) {
-      return (
-        <ImageContainerSpan2
-          id={id}
-          key={item.id}
-          fluid={item.childImageSharp.fluid}
-        />
-      )
-    } else {
-      return (
-        <ImageContainer
-          id={id}
-          key={item.id}
-          fluid={item.childImageSharp.fluid}
-        />
-      )
-    }
-  })
+  function randomNumber(limit) {
+    return Math.floor(Math.random() * limit) + 1
+  }
+
+  const imageElements = imageData.allFile.nodes.map((item, id, arr) => (
+    <ItemContainer
+      h={randomNumber(4) + 2}
+      v={randomNumber(4)}
+      key={id}
+      lastOne={arr.length}
+    >
+      <ImageContainer
+        id={randomNumber(arr.length)}
+        bgImage={item.childImageSharp.fluid.src}
+      ></ImageContainer>
+    </ItemContainer>
+  ))
 
   return (
     <>
-      {console.log(imageElements)}
-      <GridContainer>{imageElements}</GridContainer>
+      <GalleryContainer>
+        <MasonryTextBig>Work examples</MasonryTextBig>
+        <GridContainer>{imageElements}</GridContainer>
+        <PortfolioButton>See full portfolio</PortfolioButton>
+      </GalleryContainer>
     </>
   )
 }

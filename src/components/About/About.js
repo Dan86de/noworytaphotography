@@ -32,6 +32,8 @@ const AboutTextBig = styled.h2`
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
+  display: block;
+  width: 70%;
   @media (min-width: 768px) {
     font-size: 3.5rem;
     width: 40%;
@@ -59,7 +61,7 @@ const AboutTextMid = styled.h3`
 const AboutTextSmall = styled.p`
   font-size: 0.8rem;
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.3;
   padding: 1rem 1rem;
   @media (min-width: 768px) {
     font-size: 1.2rem;
@@ -152,12 +154,13 @@ const AboutTextBiScreensWrapper = styled.div`
     width: 50%;
     h1 {
       font-family: ff-market-web;
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
     h2 {
       font-family: ff-market-web;
       font-size: 3rem;
       text-align: center;
+      padding-top: 1rem;
     }
     p {
       font-size: 1.1rem;
@@ -209,7 +212,7 @@ const AboutSection = () => {
 
         <AboutTextMid>"the devil is in the detail"</AboutTextMid>
         <AboutTextBiScreensWrapper>
-          <h1>Hi My name is Kasia</h1>
+          <h1>Hi my name is Kate</h1>
           <p>
             {' '}
             I would like to tell you about my passion. I'm interior

@@ -2,9 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FooterWrapper = styled.footer`
-  position: absolute;
-  top: calc(100vh - 3rem);
-  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
