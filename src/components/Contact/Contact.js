@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
+// import { graphql, useStaticQuery } from 'gatsby'
 
 const FormWrapper = styled.div`
   display: flex;
@@ -73,17 +73,17 @@ const FormWrapper = styled.div`
     }
   }
 `
-const query = graphql`
-  {
-    file(name: { regex: "/kiki_body/" }) {
-      childImageSharp {
-        fluid(maxWidth: 475, maxHeight: 650, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-  }
-`
+// const query = graphql`
+//   {
+//     file(name: { regex: "/kiki_body/" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 475, maxHeight: 650, quality: 100) {
+//           ...GatsbyImageSharpFluid_tracedSVG
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default class Contact extends React.Component {
   constructor(props) {

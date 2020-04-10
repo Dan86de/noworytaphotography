@@ -35,22 +35,21 @@ const MasonryTextBig = styled.h1`
 
 const GridContainer = styled.div`
   margin: 0 auto;
-  width: 80%;
   display: grid;
   grid-gap: 5px;
   grid-template-columns: repeat(auto-fill, 1fr);
-  grid-auto-rows: 80px;
-  justify-items: stretch;
-  align-items: stretch;
+  grid-template-rows: repeat(5, 250px);
+  grid-auto-rows: 250px;
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+    grid-auto-rows: 250px;
   }
   @media (min-width: 1280px) {
     grid-template-columns: repeat(3, 1fr);
   }
   @media (min-width: 1920px) {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `
 
@@ -62,17 +61,34 @@ const ImageContainer = styled.div`
   background-size: cover;
   background-position: center;
   object-fit: cover;
-  @media (min-width: 768px) {
-  }
-  @media (min-width: 1280px) {
-  }
-  @media (min-width: 1920px) {
-  }
 `
 const ItemContainer = styled.div`
-  overflow: hidden;
-  grid-row: span ${({ h }) => h};
   @media (min-width: 768px) {
+    :last-of-type {
+      grid-column: span 2/-1;
+    }
+  }
+  @media (min-width: 1280px) {
+    :last-of-type {
+      grid-column: span 2 / -1;
+    }
+  }
+  @media (min-width: 1920px) {
+    :first-of-type {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    :nth-of-type(2) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    :nth-of-type(8) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    :last-of-type {
+      grid-column: span 1;
+    }
   }
 `
 
@@ -96,7 +112,7 @@ const query = graphql`
       nodes {
         id
         childImageSharp {
-          fluid(maxWidth: 320, maxHeight: 410, quality: 100) {
+          fluid(maxWidth: 640, maxHeight: 400, quality: 100) {
             src
           }
         }
@@ -107,26 +123,16 @@ const query = graphql`
 
 const MasonryCollage = () => {
   const imageData = useStaticQuery(query)
-  function randomNumber(limit) {
-    return Math.floor(Math.random() * limit) + 1
-  }
 
-  const imageElements = imageData.allFile.nodes.map((item, id, arr) => (
-    <ItemContainer
-      h={randomNumber(4) + 1}
-      v={randomNumber(4)}
-      key={id}
-      lastOne={arr.length}
-    >
-      <ImageContainer
-        id={randomNumber(arr.length)}
-        bgImage={item.childImageSharp.fluid.src}
-      ></ImageContainer>
+  const imageElements = imageData.allFile.nodes.map((item, id) => (
+    <ItemContainer key={id}>
+      <ImageContainer bgImage={item.childImageSharp.fluid.src}></ImageContainer>
     </ItemContainer>
   ))
 
   return (
     <>
+      {console.log(imageData)}
       <GalleryContainer>
         <MasonryTextBig>Work examples</MasonryTextBig>
         <GridContainer>{imageElements}</GridContainer>

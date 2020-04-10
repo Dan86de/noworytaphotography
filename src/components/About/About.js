@@ -195,12 +195,13 @@ const query = graphql`
 
 const AboutSection = () => {
   const imageData = useStaticQuery(query)
+  const AboutCollageImage = imageData.file.childImageSharp.fluid
   return (
     <>
       <AboutSectionWrapper id="about">
         <AboutTextBigAbout>About</AboutTextBigAbout>
         <AboutTextBig>Hi my name is Kate</AboutTextBig>
-        <AboutImageWrapper fluid={imageData.file.childImageSharp.fluid} />
+        <AboutImageWrapper fluid={AboutCollageImage} />
 
         <AboutTextSmall>
           I would like to tell you about my passion. I'm interior photographer.
