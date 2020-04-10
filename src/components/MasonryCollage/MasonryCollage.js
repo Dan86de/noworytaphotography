@@ -132,7 +132,6 @@ const MasonryCollage = () => {
 
   return (
     <>
-      {console.log(imageData)}
       <GalleryContainer>
         <MasonryTextBig>Work examples</MasonryTextBig>
         <GridContainer>{imageElements}</GridContainer>

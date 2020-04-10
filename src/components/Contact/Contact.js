@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { graphql, useStaticQuery } from 'gatsby'
+
+import KikiBodyImage from '../KikiBody/KikiBody'
 
 const FormWrapper = styled.div`
   display: flex;
@@ -18,10 +19,29 @@ const FormWrapper = styled.div`
   h1 {
     font-family: ff-market-web;
     margin: 1rem 0 0 0;
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+    @media (min-width: 1280px) {
+      font-size: 3.5rem;
+    }
+    @media (min-width: 1920px) {
+      font-size: 4rem;
+    }
   }
   p {
     font-size: 0.75rem;
     margin: 0.5rem 0 1rem 0;
+    @media (min-width: 768px) {
+      font-size: 1rem;
+      width: 70%;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 1280px) {
+      font-size: 1.5rem;
+    }
+    @media (min-width: 1920px) {
+    }
     span {
       font-weight: 700;
     }
@@ -31,11 +51,29 @@ const FormWrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    @media (min-width: 1280px) {
+      width: 50%;
+      border: 4px solid #384f47;
+      padding: 3rem 3rem 0 3rem;
+      margin: 0 0 5rem 0;
+    }
+    @media (min-width: 1920px) {
+      padding: 4rem 4rem 0 4rem;
+    }
     label {
       display: flex;
       flex-direction: column;
       font-weight: 700;
       padding: 0.5rem 0;
+      width: 100%;
+      @media (min-width: 768px) {
+        width: 50%;
+        font-size: 1.25rem;
+      }
+      @media (min-width: 1280px) {
+        width: 100%;
+        font-size: 1.5rem;
+      }
       input {
         background-color: transparent;
         border: none;
@@ -70,20 +108,46 @@ const FormWrapper = styled.div`
       padding: 0.25rem 4rem;
       font-size: 1.5rem;
       font-family: ff-market-web;
+      @media (min-width: 768px) {
+        transform: translateX(-75%);
+        margin-bottom: 1.5rem;
+      }
+      @media (min-width: 1280px) {
+        transform: translateX(0);
+        transform: translateY(50%);
+        margin: 0;
+        font-size: 2rem;
+        padding: 0.5rem 5rem;
+        background-color: white;
+        color: inherit;
+        border: 4px solid #384f47;
+        &:hover {
+          color: white;
+          background-color: #384f47;
+        }
+      }
+      @media (min-width: 1920px) {
+      }
     }
   }
 `
-// const query = graphql`
-//   {
-//     file(name: { regex: "/kiki_body/" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 475, maxHeight: 650, quality: 100) {
-//           ...GatsbyImageSharpFluid_tracedSVG
-//         }
-//       }
-//     }
-//   }
-// `
+
+const BodyImageWrapper = styled.div`
+  display: none;
+  @media (min-width: 768px) {
+    display: block !important;
+    width: 65%;
+    position: absolute;
+    bottom: 48px;
+    right: -10%;
+    opacity: 0.8;
+  }
+
+  @media (min-width: 1280px) {
+    width: 47%;
+    right: 0;
+  }
+`
 
 export default class Contact extends React.Component {
   constructor(props) {
@@ -97,7 +161,6 @@ export default class Contact extends React.Component {
   render() {
     const { status } = this.state
     const email = 'https://formspree.io/xeqllqgr'
-    // const imageData = useStaticQuery(query)
 
     return (
       <FormWrapper>
@@ -110,12 +173,12 @@ export default class Contact extends React.Component {
           <span>contact@noworytaphotography.com</span>{' '}
         </p>
         <form onSubmit={this.submitForm} action={email} method="POST">
-          <label for="name">
+          <label htmlFor="name">
             Name:
             <input type="text" name="name" placeholder="Put your name here" />
           </label>
 
-          <label for="email">
+          <label htmlFor="email">
             Email:
             <input
               type="email"
@@ -124,7 +187,7 @@ export default class Contact extends React.Component {
             />
           </label>
 
-          <label for="message">
+          <label htmlFor="message">
             Message:
             <textarea
               rows="10"
@@ -145,6 +208,9 @@ export default class Contact extends React.Component {
               correct values on Name, Email end Message fields. Thank You!
             </p>
           )}
+          <BodyImageWrapper>
+            <KikiBodyImage />
+          </BodyImageWrapper>
         </form>
       </FormWrapper>
     )
