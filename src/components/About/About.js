@@ -51,7 +51,7 @@ const AboutTextMid = styled.h3`
   margin: 0rem auto 1rem auto;
   @media (min-width: 768px) {
     font-size: 3rem;
-    margin: 1rem auto 5rem auto;
+    margin: 1rem auto 3rem auto;
   }
   @media (min-width: 1280px) {
     display: none;

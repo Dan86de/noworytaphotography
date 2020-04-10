@@ -1,10 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 // import Img from 'gatsby-image'
 
 const GalleryContainer = styled.div`
   width: 100%;
+  padding: 0 1rem;
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+  @media (min-width: 1280px) {
+    padding: 0 3rem;
+  }
+  @media (min-width: 1920px) {
+    padding: 0 5rem;
+  }
 `
 
 const MasonryTextBig = styled.h1`
@@ -33,6 +44,7 @@ const GridContainer = styled.div`
   align-items: stretch;
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
   }
   @media (min-width: 1280px) {
     grid-template-columns: repeat(3, 1fr);
@@ -73,6 +85,9 @@ const PortfolioButton = styled.button`
   font-size: 1.5rem;
   font-family: ff-market-web;
   display: block;
+  a {
+    text-decoration: none;
+  }
 `
 
 const query = graphql`
@@ -98,7 +113,7 @@ const MasonryCollage = () => {
 
   const imageElements = imageData.allFile.nodes.map((item, id, arr) => (
     <ItemContainer
-      h={randomNumber(4) + 2}
+      h={randomNumber(4) + 1}
       v={randomNumber(4)}
       key={id}
       lastOne={arr.length}
@@ -115,7 +130,9 @@ const MasonryCollage = () => {
       <GalleryContainer>
         <MasonryTextBig>Work examples</MasonryTextBig>
         <GridContainer>{imageElements}</GridContainer>
-        <PortfolioButton>See full portfolio</PortfolioButton>
+        <Link to="/portfolio" style={{ textDecoration: 'none' }}>
+          <PortfolioButton>See full portfolio</PortfolioButton>
+        </Link>
       </GalleryContainer>
     </>
   )
