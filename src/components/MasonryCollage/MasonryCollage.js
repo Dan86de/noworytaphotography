@@ -151,7 +151,7 @@ const MasonryCollage = () => {
 
   return (
     <>
-      <GalleryContainer>
+      <GalleryContainer id="portfolio">
         <MasonryTextBig>Work examples</MasonryTextBig>
         <GridContainer>{imageElements}</GridContainer>
         <Link to="/portfolio" style={{ textDecoration: 'none' }}>

@@ -7,6 +7,12 @@ import Footer from '../components/Footer/Footer'
 
 const ContentWrapper = styled.div``
 
+if (typeof window !== 'undefined') {
+  // Make scroll behavior of internal links smooth
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('a[href*="#"]')
+}
+
 const MainLayout = ({ children }) => (
   <>
     <GlobalStyle />

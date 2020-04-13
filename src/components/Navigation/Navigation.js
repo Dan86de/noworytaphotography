@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 import { Link } from 'gatsby'
 
@@ -131,7 +132,7 @@ const Navigation = () => {
           </Link>
         </NavigationListItem>
         <NavigationListItem>
-          <Link to="/portfolio" activeClassName="linkActive">
+          <Link to="#portfolio" activeClassName="linkActive">
             Portfolio
           </Link>
         </NavigationListItem>
