@@ -4,7 +4,6 @@ import AboutSection from '../components/About/About'
 import SiteMetadata from '../components/SiteMetadata/SiteMetadata'
 import MasonryCollage from '../components/MasonryCollage/MasonryCollage'
 import Contact from '../components/Contact/Contact'
-import Footer from '../components/Footer/Footer'
 
 const IndexPage = ({ data }) => (
   <>
@@ -13,7 +12,6 @@ const IndexPage = ({ data }) => (
     <AboutSection />
     <MasonryCollage />
     <Contact />
-    <Footer />
   </>
 )
 

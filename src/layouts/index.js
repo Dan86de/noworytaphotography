@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import GlobalStyle from '../styles/globalStyles'
 import Navigation from '../components/Navigation/Navigation'
-// import Footer from '../components/Footer/Footer'
+import Footer from '../components/Footer/Footer'
 
 const ContentWrapper = styled.div``
 
@@ -12,7 +12,7 @@ const MainLayout = ({ children }) => (
     <GlobalStyle />
     <Navigation />
     <ContentWrapper>{children}</ContentWrapper>
-    {/* <Footer /> */}
+    <Footer />
   </>
 )
 

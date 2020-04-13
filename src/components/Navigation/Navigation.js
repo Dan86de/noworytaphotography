@@ -7,17 +7,16 @@ import { Link } from 'gatsby'
 
 const NavigationWrapper = styled.nav`
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.25rem 1rem;
   font-family: 'Montserrat';
   color: #384f47;
-  /* background-color: white; */
   z-index: 22;
+  position: absolute;
+  top: 0;
+  left: 0;
   @media (min-width: 768px) {
     padding: 0 2.75rem;
     background-color: transparent;
@@ -46,7 +45,7 @@ const NavigationListItem = styled.li`
     text-decoration: none;
     font-weight: 700;
     position: relative;
-    @media (min-width: 1280px) {
+    @media (min-width: 1920px) {
       font-size: 1.25rem;
     }
   }
