@@ -120,9 +120,8 @@ const PortfolioButton = styled.button`
     padding: 0.5rem 6rem;
   }
   @media (min-width: 1920px) {
-    margin: 5rem auto;
-    font-size: 2.5rem;
-    padding: 1rem 8rem;
+    font-size: 2rem;
+    padding: 0.5rem 4rem;
   }
 `
 

@@ -24,7 +24,7 @@ const FormWrapper = styled.div`
       font-size: 3rem;
     }
     @media (min-width: 1280px) {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     @media (min-width: 1920px) {
       font-size: 4rem;
@@ -66,8 +66,7 @@ const FormWrapper = styled.div`
       margin: 2rem 0 4rem 0;
     }
     @media (min-width: 1920px) {
-      padding: 2rem 4rem 0 3rem;
-      margin: 2rem 0 8rem 0;
+      margin: 4rem 0 6rem 0;
     }
     label {
       display: flex;
@@ -75,9 +74,10 @@ const FormWrapper = styled.div`
       font-weight: 700;
       padding: 0.5rem 0;
       width: 100%;
+      font-size: 1rem;
       @media (min-width: 768px) {
         width: 45%;
-        font-size: 1.25rem;
+        font-size: 1rem;
       }
       @media (min-width: 1280px) {
         &:nth-child(1),
@@ -95,6 +95,7 @@ const FormWrapper = styled.div`
         color: inherit;
         line-height: 1.5;
         padding-top: 0.5rem;
+        font-size: 0.8rem;
         &::placeholder {
           color: #909d98;
           font-family: 'Montserrat';
@@ -113,35 +114,6 @@ const FormWrapper = styled.div`
         font-family: 'Montserrat';
       }
     }
-    button {
-      background-color: #384f47;
-      color: white;
-      border: none;
-      margin: 1rem auto;
-      padding: 0.25rem 4rem;
-      font-size: 1.5rem;
-      font-family: ff-market-web;
-      transition: 0.2s all ease-in-out;
-      @media (min-width: 768px) {
-        transform: translateX(-75%);
-      }
-      @media (min-width: 1280px) {
-        transform: translateX(0%);
-        transform: translateY(50%);
-        margin: 0;
-        font-size: 1.5rem;
-        padding: 0.5rem 5rem;
-        background-color: white;
-        color: inherit;
-        border: 3px solid #384f47;
-        &:hover {
-          color: white;
-          background-color: #384f47;
-        }
-      }
-      @media (min-width: 1920px) {
-      }
-    }
   }
 `
 
@@ -149,15 +121,14 @@ const BodyImageWrapper = styled.div`
   display: none;
   @media (min-width: 768px) {
     display: block !important;
-    width: 60%;
+    width: 55%;
     position: absolute;
     bottom: 48px;
     right: 0;
     opacity: 0.8;
   }
-
   @media (min-width: 1280px) {
-    width: 50%;
+    width: 45%;
     right: 0;
   }
   @media (min-width: 1920px) {
@@ -167,15 +138,75 @@ const BodyImageWrapper = styled.div`
 `
 
 const EmailAlert = styled.div`
-  padding: 3rem auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
   font-weight: 700;
-  width: 100%;
+  margin: 1rem auto;
+  /* border: 1px solid black; */
+  p {
+    font-size: 0.8rem;
+    @media (min-width: 768px) {
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 1280px) {
+      margin: 0 auto;
+      background-color: white;
+      display: block;
+      width: 100%;
+      text-align: center;
+      border: 3px solid #384f47;
+      padding: 0.5rem 5rem;
+      font-size: 1rem;
+    }
+    @media (min-width: 1920px) {
+      font-size: 1.75rem;
+      padding: 1rem 5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    margin: 0;
+    justify-content: flex-start;
+    padding-left: 2.5rem;
+  }
   @media (min-width: 1280px) {
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    transform: translateY(50%);
   }
   @media (min-width: 1920px) {
+  }
+  button {
+    background-color: #384f47;
+    color: white;
+    border: none;
+    padding: 0.25rem 4rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: ff-market-web;
+    transition: 0.2s all ease-in-out;
+    cursor: pointer;
+    @media (min-width: 768px) {
+      margin: 1rem 0 1.5rem 0;
+    }
+    @media (min-width: 1280px) {
+      font-size: 1.5rem;
+      padding: 0.5rem 5rem;
+      background-color: white;
+      color: inherit;
+      border: 3px solid #384f47;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+      margin: 0;
+      &:hover {
+        color: white;
+        background-color: #384f47;
+      }
+    }
+    @media (min-width: 1920px) {
+      font-size: 1.75rem;
+      padding: 0.5rem 6rem;
+    }
   }
 `
 
@@ -234,7 +265,7 @@ export default class Contact extends React.Component {
           </label>
 
           <input type="text" name="_gotcha" style={{ display: 'none' }} />
-          <EmailAlert>
+          <EmailAlert style={{ display: 'flex' }}>
             {status === 'SUCCESS' ? (
               <p>Thank You! I will reply in 24hrs!</p>
             ) : (
