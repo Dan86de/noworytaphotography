@@ -47,6 +47,7 @@ const GridContainer = styled.div`
   }
   @media (min-width: 1280px) {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 250px);
   }
   @media (min-width: 1920px) {
     grid-template-columns: repeat(4, 1fr);
@@ -101,8 +102,27 @@ const PortfolioButton = styled.button`
   font-size: 1.5rem;
   font-family: ff-market-web;
   display: block;
+  cursor: pointer;
+  &:hover {
+    color: white;
+    background-color: #384f47;
+  }
   a {
     text-decoration: none;
+  }
+  @media (min-width: 768px) {
+    margin: 3rem auto;
+    font-size: 2rem;
+  }
+  @media (min-width: 1280px) {
+    margin: 3rem auto;
+    font-size: 2rem;
+    padding: 0.5rem 6rem;
+  }
+  @media (min-width: 1920px) {
+    margin: 5rem auto;
+    font-size: 2.5rem;
+    padding: 1rem 8rem;
   }
 `
 

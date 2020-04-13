@@ -20,10 +20,11 @@ const FormWrapper = styled.div`
     font-family: ff-market-web;
     margin: 1rem 0 0 0;
     @media (min-width: 768px) {
+      margin: 0;
       font-size: 3rem;
     }
     @media (min-width: 1280px) {
-      font-size: 3.5rem;
+      font-size: 4rem;
     }
     @media (min-width: 1920px) {
       font-size: 4rem;
@@ -34,13 +35,17 @@ const FormWrapper = styled.div`
     margin: 0.5rem 0 1rem 0;
     @media (min-width: 768px) {
       font-size: 1rem;
-      width: 70%;
+      width: 80%;
       margin-top: 1.5rem;
     }
     @media (min-width: 1280px) {
-      font-size: 1.5rem;
+      width: 70%;
+      font-size: 1.25rem;
+      margin: 0.5rem 0 0 0;
     }
     @media (min-width: 1920px) {
+      width: 65%;
+      font-size: 1.5rem;
     }
     span {
       font-weight: 700;
@@ -52,13 +57,17 @@ const FormWrapper = styled.div`
     flex-direction: column;
     margin: 0 auto;
     @media (min-width: 1280px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
       width: 50%;
-      border: 4px solid #384f47;
-      padding: 3rem 3rem 0 3rem;
-      margin: 0 0 5rem 0;
+      border: 3px solid #384f47;
+      padding: 2rem 3rem 0 3rem;
+      margin: 2rem 0 4rem 0;
     }
     @media (min-width: 1920px) {
-      padding: 4rem 4rem 0 4rem;
+      padding: 2rem 4rem 0 3rem;
+      margin: 2rem 0 8rem 0;
     }
     label {
       display: flex;
@@ -67,12 +76,16 @@ const FormWrapper = styled.div`
       padding: 0.5rem 0;
       width: 100%;
       @media (min-width: 768px) {
-        width: 50%;
+        width: 45%;
         font-size: 1.25rem;
       }
       @media (min-width: 1280px) {
+        &:nth-child(1),
+        &:nth-child(2) {
+          width: 45%;
+        }
         width: 100%;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
       input {
         background-color: transparent;
@@ -108,19 +121,19 @@ const FormWrapper = styled.div`
       padding: 0.25rem 4rem;
       font-size: 1.5rem;
       font-family: ff-market-web;
+      transition: 0.2s all ease-in-out;
       @media (min-width: 768px) {
         transform: translateX(-75%);
-        margin-bottom: 1.5rem;
       }
       @media (min-width: 1280px) {
-        transform: translateX(0);
+        transform: translateX(0%);
         transform: translateY(50%);
         margin: 0;
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 0.5rem 5rem;
         background-color: white;
         color: inherit;
-        border: 4px solid #384f47;
+        border: 3px solid #384f47;
         &:hover {
           color: white;
           background-color: #384f47;
@@ -136,16 +149,33 @@ const BodyImageWrapper = styled.div`
   display: none;
   @media (min-width: 768px) {
     display: block !important;
-    width: 65%;
+    width: 60%;
     position: absolute;
     bottom: 48px;
-    right: -10%;
+    right: 0;
     opacity: 0.8;
   }
 
   @media (min-width: 1280px) {
-    width: 47%;
+    width: 50%;
     right: 0;
+  }
+  @media (min-width: 1920px) {
+    width: 40%;
+    right: 3%;
+  }
+`
+
+const EmailAlert = styled.div`
+  padding: 3rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  width: 100%;
+  @media (min-width: 1280px) {
+  }
+  @media (min-width: 1920px) {
   }
 `
 
@@ -163,10 +193,10 @@ export default class Contact extends React.Component {
     const email = 'https://formspree.io/xeqllqgr'
 
     return (
-      <FormWrapper>
+      <FormWrapper id="contact">
         <h1>Contact</h1>
         <p>
-          If You wanna contact me feel free to use contact form below or write
+          If you wanna contact me feel free to use contact form below or write
           directly on my email:
           <br></br>
           <br></br>
@@ -175,7 +205,12 @@ export default class Contact extends React.Component {
         <form onSubmit={this.submitForm} action={email} method="POST">
           <label htmlFor="name">
             Name:
-            <input type="text" name="name" placeholder="Put your name here" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Put your name here"
+              required
+            />
           </label>
 
           <label htmlFor="email">
@@ -184,6 +219,7 @@ export default class Contact extends React.Component {
               type="email"
               name="_replyto"
               placeholder="Put your email here"
+              required
             />
           </label>
 
@@ -193,21 +229,24 @@ export default class Contact extends React.Component {
               rows="10"
               name="message"
               placeholder="Write your message here"
+              required
             ></textarea>
           </label>
 
           <input type="text" name="_gotcha" style={{ display: 'none' }} />
-          {status === 'SUCCESS' ? (
-            <p>Thanks! I will reply in 24hrs!</p>
-          ) : (
-            <button>Contact Me</button>
-          )}
-          {status === 'ERROR' && (
-            <p>
-              Ooops! There was an error. Please make sure that You've writed
-              correct values on Name, Email end Message fields. Thank You!
-            </p>
-          )}
+          <EmailAlert>
+            {status === 'SUCCESS' ? (
+              <p>Thank You! I will reply in 24hrs!</p>
+            ) : (
+              <button>Contact Me</button>
+            )}
+            {status === 'ERROR' && (
+              <p>
+                Ooops! There was an error. Please make sure that You've writed
+                correct values on Name, Email end Message fields. Thank You!
+              </p>
+            )}
+          </EmailAlert>
           <BodyImageWrapper>
             <KikiBodyImage />
           </BodyImageWrapper>
