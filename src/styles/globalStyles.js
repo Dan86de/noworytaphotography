@@ -17,8 +17,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Montserrat';
     color: #384f47;
-    position: relative;
-    height: 100%;
   }
 
   ul {

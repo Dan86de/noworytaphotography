@@ -77,7 +77,7 @@ const LogoImage = styled(Image)`
     width: 60px;
   }
   @media (min-width: 1920px) {
-    width: 80px;
+    width: 70px;
   }
 `
 

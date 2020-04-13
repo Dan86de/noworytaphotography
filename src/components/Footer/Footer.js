@@ -20,7 +20,9 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      <p>Copyright @2020 noworytaphotography.com</p>
+      <p>
+        Copyright @2020 <strong>noworytaphotography.com</strong>
+      </p>
     </FooterWrapper>
   )
 }

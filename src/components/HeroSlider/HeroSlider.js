@@ -6,12 +6,6 @@ const HeroSliderWrapper = styled.div`
   width: 100%;
   height: 100vh;
   z-index: -1;
-  @media (min-width: 768px) {
-  }
-  @media (min-width: 1280px) {
-  }
-  @media (min-width: 1920px) {
-  }
 `
 
 const HeroSliderImageWrapper = styled.div`

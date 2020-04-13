@@ -7,6 +7,7 @@ const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
+  position: relative;
   @media (min-width: 768px) {
     padding: 0 2.75rem;
   }
@@ -96,9 +97,15 @@ const FormWrapper = styled.div`
         line-height: 1.5;
         padding-top: 0.5rem;
         font-size: 0.8rem;
+        transition: all ease-out 0.3s;
         &::placeholder {
           color: #909d98;
           font-family: 'Montserrat';
+          padding: 1rem 0 1rem 0;
+        }
+        &:focus {
+          outline: none;
+          background-color: #e8ebea;
         }
       }
     }
@@ -109,9 +116,15 @@ const FormWrapper = styled.div`
       border-bottom: 2px solid #384f47;
       font-family: 'Montserrat';
       color: inherit;
+      padding: 0.5rem 0 1rem 0;
+      transition: all ease-out 0.3s;
       &::placeholder {
         color: #909d98;
         font-family: 'Montserrat';
+      }
+      &:focus {
+        outline: none;
+        background-color: #e8ebea;
       }
     }
   }
@@ -121,19 +134,17 @@ const BodyImageWrapper = styled.div`
   display: none;
   @media (min-width: 768px) {
     display: block !important;
-    width: 55%;
+    width: 60%;
     position: absolute;
-    bottom: 48px;
+    bottom: 0;
     right: 0;
     opacity: 0.8;
   }
   @media (min-width: 1280px) {
     width: 45%;
-    right: 0;
   }
   @media (min-width: 1920px) {
     width: 40%;
-    right: 3%;
   }
 `
 
