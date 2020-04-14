@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
+import ImageSlide from '../ImageSlide/ImageSlide'
+
 const HeroSliderWrapper = styled.div`
   width: 100%;
   height: 100vh;
@@ -153,13 +155,14 @@ const query = graphql`
   }
 `
 
-const HeroSlider = () => {
+const HeroSlider = props => {
   const imagesData = useStaticQuery(query)
 
   return (
     <>
       <HeroSliderWrapper>
-        <HeroSliderImageWrapper
+        <ImageSlide images={props.images}></ImageSlide>
+        {/* <HeroSliderImageWrapper
           bgImage={imagesData.allFile.nodes[1].childImageSharp.original.src}
         >
           <HeroSliderTextWrapper>
@@ -175,7 +178,7 @@ const HeroSlider = () => {
               bgImage={imagesData.allFile.nodes[0].childImageSharp.original.src}
             />
           </HeroSliderTextWrapper>
-        </HeroSliderImageWrapper>
+        </HeroSliderImageWrapper> */}
       </HeroSliderWrapper>
     </>
   )

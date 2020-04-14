@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
+
 import Img from 'gatsby-image'
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: -1;
+`
 
 class ImageSlide extends Component {
   constructor(props) {
@@ -9,7 +17,12 @@ class ImageSlide extends Component {
     this.state = {}
   }
   render() {
-    return <></>
+    return (
+      <>
+        {console.log(this.props.images)}
+        <ImageWrapper></ImageWrapper>
+      </>
+    )
   }
 }
 
