@@ -13,7 +13,7 @@ const HeroSlider = props => {
   return (
     <>
       <HeroSliderWrapper>
-        <ImageSlide />
+        <ImageSlide/>
       </HeroSliderWrapper>
     </>
   )
