@@ -10,6 +10,13 @@ module.exports = {
     `gatsby-plugin-layout`,
     `gatsby-plugin-smoothscroll`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `backgrounds`,
+        path: `${__dirname}/src/assets/images/SliderImages`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
