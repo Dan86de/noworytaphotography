@@ -1,6 +1,24 @@
 import React from 'react'
 import BackgroundSlider from 'gatsby-image-background-slider'
 import { graphql, useStaticQuery } from 'gatsby'
+import styled from 'styled-components'
+
+const TextWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 50vh;
+  h2 {
+    font-family: ff-market-web;
+    font-weight: 700;
+  }
+`
 
 const ImageSlider = () => {
   return (
@@ -13,8 +31,9 @@ const ImageSlider = () => {
             ) {
               nodes {
                 id
+                relativePath
                 childImageSharp {
-                  fluid(maxWidth: 640, maxHeight: 400, quality: 100) {
+                  fluid(maxWidth: 1920, maxHeight: 1500, quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -22,8 +41,8 @@ const ImageSlider = () => {
             }
           }
         `)}
-        initDelay={2} // delay before the first transition (if left at 0, the first image will be skipped initially)
-        transition={4} // transition duration between images
+        initDelay={4} // delay before the first transition (if left at 0, the first image will be skipped initially)
+        transition={3} // transition duration between images
         duration={10} // how long an image is shown
         // specify images to include (and their order) according to `relativePath`
         images={[
@@ -42,20 +61,18 @@ const ImageSlider = () => {
         ]}
         // pass down standard element props
         style={{
-          transform: 'rotate(-2deg) scale(.9)',
+          transform: 'width: 100%, height:100vh, position:relative',
         }}
       >
         {/* Captions in sync with background images*/}
-        <div>Woof</div>
-        <div>Meow</div>
-        <>
-          {/* Giraffes don't talk; [they aren't real](https://chivomengro.com/2017/10/23/the-truth-comes-out-giraffes-are-a-hoax/) */}
-        </>
-        <a href="https://en.wikipedia.org/wiki/Tasmanian_devil#Conservation_status">
-          I could use a hand
-        </a>
-        <div>I need to find better hobbies</div>
       </BackgroundSlider>
+      <TextWrapper>
+        <h2>Let me capture your Interior Passion</h2>
+        <p>
+          I love to see what other`s do with their living places and I want to
+          show this in a best possible way.
+        </p>
+      </TextWrapper>
     </>
   )
 }
