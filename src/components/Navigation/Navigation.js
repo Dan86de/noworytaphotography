@@ -34,6 +34,7 @@ const NavigationList = styled.ul`
   list-style: none;
   @media (min-width: 768px) {
     display: flex;
+    padding-top: 1rem;
   }
 `
 
@@ -49,7 +50,7 @@ const NavigationListItem = styled.li`
       font-size: 1.25rem;
     }
   }
-  a.linkActive::before {
+  /* a.linkActive::before {
     content: '';
     position: absolute;
     top: 1.65rem;
@@ -66,7 +67,7 @@ const NavigationListItem = styled.li`
       top: 1.7rem;
       transform: translateY(2px);
     }
-  }
+  } */
 `
 
 const LogoImage = styled(Image)`
@@ -111,7 +112,7 @@ const Navigation = () => {
 
   return (
     <NavigationWrapper>
-      <Link to="/">
+      <Link to="/" exact>
         <LogoImage
           fluid={iconsData.allFile.edges[2].node.childImageSharp.fluid}
         />
@@ -121,7 +122,7 @@ const Navigation = () => {
       />
       <NavigationList>
         <NavigationListItem>
-          <Link to="/" activeClassName="linkActive">
+          <Link to="/" exact activeClassName="linkActive">
             Home
           </Link>
         </NavigationListItem>

@@ -7,11 +7,14 @@ import { Link } from 'gatsby'
 const GalleryContainer = styled.div`
   width: 100%;
   padding: 0 1rem;
+  margin-bottom: 1rem;
   @media (min-width: 768px) {
     padding: 0 2rem;
+    margin-bottom: 2rem;
   }
   @media (min-width: 1280px) {
     padding: 0 3rem;
+    margin-bottom: 3rem;
   }
   @media (min-width: 1920px) {
     padding: 0 5rem;
@@ -101,7 +104,7 @@ const PortfolioButton = styled.button`
   padding: 0.25rem 4rem;
   font-size: 1.5rem;
   font-family: ff-market-web;
-  display: block;
+  display: none;
   cursor: pointer;
   &:hover {
     color: white;

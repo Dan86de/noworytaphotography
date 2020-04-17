@@ -5,6 +5,14 @@ import Img from 'gatsby-image'
 
 const HandIconWrapper = styled(Img)`
   width: 40px;
+  @media (min-width: 768px) {
+    width: 60px;
+  }
+  @media (min-width: 1280px) {
+    display: none;
+  }
+  @media (min-width: 1920px) {
+  }
 `
 
 const query = graphql`
