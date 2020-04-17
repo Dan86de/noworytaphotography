@@ -206,7 +206,7 @@ const ImageSlider = () => {
         </SliderWrapper>
       </>
     )
-  }
+  } else return null
 }
 
 export default ImageSlider
