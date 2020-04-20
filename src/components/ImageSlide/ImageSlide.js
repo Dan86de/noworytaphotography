@@ -33,7 +33,7 @@ const TextWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
   height: 50%;
-  padding: 0rem 1rem 1rem 1rem;
+  padding: 0 1rem;
   z-index: 2;
   @media (min-width: 768px) {
   }
@@ -97,6 +97,8 @@ const TextWrapper = styled.div`
       @media (min-width: 1280px) {
       }
       @media (min-width: 1920px) {
+        border: 4px solid #7a8984;
+        bottom: 11px;
       }
     }
   }
