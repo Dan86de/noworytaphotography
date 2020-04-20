@@ -153,7 +153,7 @@ const BodyImageWrapper = styled.div`
     width: 35%;
     right: 4rem;
   }
-  @media (min-width: 1920px) {
+  @media (min-width: 1600px) {
     width: 30%;
     right: 6rem;
   }
