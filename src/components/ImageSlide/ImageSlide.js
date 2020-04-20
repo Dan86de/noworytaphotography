@@ -175,7 +175,6 @@ const ImageSlider = () => {
                   }
                 }
               }
-<<<<<<< HEAD
             `)}
             initDelay={4} // delay before the first transition (if left at 0, the first image will be skipped initially)
             transition={3} // transition duration between images
@@ -219,26 +218,6 @@ const ImageSlider = () => {
     </>
   )
   // } else return null
-=======
-            >
-              {/* Captions in sync with background images*/}
-            </BackgroundSlider>
-          </ImageSlideWrapper>
-          <TextWrapper>
-            <h2>
-              Let me capture your Interior <span>{word}</span>
-            </h2>
-            <p>
-              I love to see what other`s do with their living places and I want
-              to show this in a best possible way.
-            </p>
-            <HandIcon></HandIcon>
-          </TextWrapper>
-        </SliderWrapper>
-      </>
-    )
-  } else return null
->>>>>>> d35162b57e72723d430cb2b62c908ba250558868
 }
 
 export default ImageSlider
