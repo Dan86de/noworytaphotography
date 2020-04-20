@@ -6,8 +6,11 @@ import KikiBodyImage from '../KikiBody/KikiBody'
 const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   position: relative;
+  @media (min-width: 321px) {
+    padding: 0 1rem;
+  }
   @media (min-width: 768px) {
     padding: 0 2.75rem;
   }
@@ -19,7 +22,10 @@ const FormWrapper = styled.div`
   }
   h1 {
     font-family: ff-market-web;
-    margin: 1rem 0 0 0;
+    margin: 0;
+    @media (min-width: 321px) {
+      margin: 1rem 0 0 0;
+    }
     @media (min-width: 768px) {
       margin: 0;
       font-size: 3rem;
@@ -32,8 +38,12 @@ const FormWrapper = styled.div`
     }
   }
   p {
-    font-size: 0.75rem;
-    margin: 0.5rem 0 1rem 0;
+    font-size: 0.7rem;
+    margin: 0;
+    @media (min-width: 321px) {
+      margin: 0.5rem 0 1rem 0;
+      font-size: 0.75rem;
+    }
     @media (min-width: 768px) {
       font-size: 1rem;
       width: 80%;
@@ -73,9 +83,11 @@ const FormWrapper = styled.div`
       display: flex;
       flex-direction: column;
       font-weight: 700;
-      padding: 0.5rem 0;
+      padding: 0.25rem 0;
       width: 100%;
-      font-size: 1rem;
+      @media (min-width: 321px) {
+        padding: 0.5rem 0;
+      }
       @media (min-width: 768px) {
         width: 45%;
         font-size: 1rem;
@@ -94,14 +106,11 @@ const FormWrapper = styled.div`
         border-bottom: 2px solid #384f47;
         font-family: 'Montserrat';
         color: inherit;
-        line-height: 1.5;
-        padding-top: 0.5rem;
-        font-size: 0.8rem;
         transition: all ease-out 0.3s;
+        margin-top: 0.5rem;
         &::placeholder {
           color: #909d98;
           font-family: 'Montserrat';
-          padding: 1rem 0 1rem 0;
         }
         &:focus {
           outline: none;

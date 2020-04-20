@@ -45,10 +45,15 @@ const AboutTextBig = styled.h2`
 `
 
 const AboutTextMid = styled.h3`
-  font-size: 2rem;
   font-family: ff-market-web;
   font-weight: 700;
-  margin: 0rem auto 1rem auto;
+  font-size: 1.8rem;
+  margin: 0;
+  @media (min-width: 321px) {
+    font-size: 2rem;
+    margin: 0rem auto 1rem auto;
+  }
+
   @media (min-width: 768px) {
     font-size: 3rem;
     margin: 1rem auto 3rem auto;

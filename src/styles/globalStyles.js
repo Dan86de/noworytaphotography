@@ -23,6 +23,17 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
+  textarea,
+  input.text,
+  input[type="text"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="email"],
+  .input-checkbox {
+  -webkit-appearance: none;
+  border-radius: 0;
+  }
 `
 
 export default GlobalStyle

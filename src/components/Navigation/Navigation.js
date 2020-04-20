@@ -112,7 +112,7 @@ const Navigation = () => {
 
   return (
     <NavigationWrapper>
-      <Link to="/" exact>
+      <Link to="/" exact="true">
         <LogoImage
           fluid={iconsData.allFile.edges[2].node.childImageSharp.fluid}
         />
@@ -122,7 +122,7 @@ const Navigation = () => {
       />
       <NavigationList>
         <NavigationListItem>
-          <Link to="/" exact activeClassName="linkActive">
+          <Link to="/" exact="true" activeClassName="linkActive">
             Home
           </Link>
         </NavigationListItem>

@@ -33,7 +33,7 @@ const TextWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
   height: 50%;
-  padding: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
   z-index: 2;
   @media (min-width: 768px) {
   }
@@ -48,11 +48,14 @@ const TextWrapper = styled.div`
   h2 {
     font-family: ff-market-web;
     font-weight: 700;
-    font-size: 2.5rem;
     text-align: center;
     line-height: 1.1;
     margin: 0;
-    padding: 0 0.5rem;
+    font-size: 2rem;
+    @media (min-width: 321px) {
+      font-size: 2.5rem;
+      padding: 0 0.5rem;
+    }
     @media (min-width: 768px) {
       font-size: 3.75rem;
       width: 80%;
@@ -78,13 +81,17 @@ const TextWrapper = styled.div`
       content: '';
       display: block;
       position: absolute;
-      bottom: 5px;
+      bottom: 3px;
       left: 0;
       width: 80%;
       height: 6px;
       color: #7a8984;
-      border: 4px solid #7a8984;
+      border: 3px solid #7a8984;
       z-index: -1;
+      @media (min-width: 321px) {
+        border: 4px solid #7a8984;
+        bottom: 5px;
+      }
       @media (min-width: 768px) {
       }
       @media (min-width: 1280px) {
@@ -94,11 +101,14 @@ const TextWrapper = styled.div`
     }
   }
   p {
-    line-height: 1.4;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: center;
-    padding: 0 1rem;
+    line-height: 1.4;
     margin: 0;
+    @media (min-width: 321px) {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
     @media (min-width: 768px) {
       font-size: 1.5rem;
       line-height: 1.1;
@@ -123,90 +133,91 @@ const TextWrapper = styled.div`
 `
 
 const ImageSlider = () => {
-  if (typeof window !== 'undefined') {
-    const Words = [
-      'Creativity',
-      'Authenticity',
-      'Personality',
-      'Proportion',
-      'Phantasy',
-      'Mood',
-      'Style',
-      'Idea',
-      'Passion',
-    ]
-    const [word, setWord] = React.useState('Passion')
-    let isDesktop = false
-    let width = window.innerWidth
-    if (width >= 1280) {
-      isDesktop = true
-    }
+  // if (typeof window !== `undefined`) {
+  const Words = [
+    'Creativity',
+    'Authenticity',
+    'Personality',
+    'Proportion',
+    'Phantasy',
+    'Mood',
+    'Style',
+    'Idea',
+    'Passion',
+  ]
+  const [word, setWord] = React.useState('Passion')
 
-    return (
-      <>
-        <SliderWrapper>
-          <ImageSlideWrapper>
-            <BackgroundSlider
-              callbacks={{ onChange: i => setWord(Words[i % 8]) }}
-              query={useStaticQuery(graphql`
-                query {
-                  backgrounds: allFile(
-                    filter: { absolutePath: { regex: "/Slider/" } }
-                  ) {
-                    nodes {
-                      id
-                      relativePath
-                      childImageSharp {
-                        fluid(maxWidth: 1920, maxHeight: 1500, quality: 100) {
-                          ...GatsbyImageSharpFluid
-                        }
+  let isDesktop = false
+  let width = window.innerWidth
+  if (width >= 1280) {
+    isDesktop = true
+  }
+
+  return (
+    <>
+      <SliderWrapper>
+        <ImageSlideWrapper>
+          <BackgroundSlider
+            callbacks={{ onChange: i => setWord(Words[i % 8]) }}
+            query={useStaticQuery(graphql`
+              query {
+                backgrounds: allFile(
+                  filter: { absolutePath: { regex: "/Slider/" } }
+                ) {
+                  nodes {
+                    id
+                    relativePath
+                    childImageSharp {
+                      fluid(maxWidth: 1920, maxHeight: 1500, quality: 100) {
+                        ...GatsbyImageSharpFluid
                       }
                     }
                   }
                 }
-              `)}
-              initDelay={4} // delay before the first transition (if left at 0, the first image will be skipped initially)
-              transition={3} // transition duration between images
-              duration={10} // how long an image is shown
-              // specify images to include (and their order) according to `relativePath`
-              images={[
-                'slide-1.jpg',
-                'slide-2.jpg',
-                'slide-3.jpg',
-                'slide-4.jpg',
-                'slide-5.jpg',
-                'slide-6.jpg',
-                'slide-7.jpg',
-                'slide-8.jpg',
-                'slide-9.jpg',
-                'slide-10.jpg',
-                'slide-11.jpg',
-                'slide-12.JPG',
-              ]}
-              // pass down standard element props
-              style={
-                isDesktop
-                  ? { height: '100%', width: '50%', marginLeft: '50%' }
-                  : { height: '50%' }
               }
-            >
-              {/* Captions in sync with background images*/}
-            </BackgroundSlider>
-          </ImageSlideWrapper>
-          <TextWrapper>
-            <h2>
-              Let me capture your Interior <span>{word}</span>
-            </h2>
-            <p>
-              I love to see what other`s do with their living places and I want
-              to show this in a best possible way.
-            </p>
-            <HandIcon></HandIcon>
-          </TextWrapper>
-        </SliderWrapper>
-      </>
-    )
-  }
+            `)}
+            initDelay={4} // delay before the first transition (if left at 0, the first image will be skipped initially)
+            transition={3} // transition duration between images
+            duration={10} // how long an image is shown
+            // specify images to include (and their order) according to `relativePath`
+            images={[
+              'slide-1.jpg',
+              'slide-2.jpg',
+              'slide-3.jpg',
+              'slide-4.jpg',
+              'slide-5.jpg',
+              'slide-6.jpg',
+              'slide-7.jpg',
+              'slide-8.jpg',
+              'slide-9.jpg',
+              'slide-10.jpg',
+              'slide-11.jpg',
+              'slide-12.JPG',
+            ]}
+            // pass down standard element props
+            style={
+              isDesktop
+                ? { height: '100%', width: '50%', marginLeft: '50%' }
+                : { height: '50%' }
+            }
+          >
+            {/* Captions in sync with background images*/}
+          </BackgroundSlider>
+        </ImageSlideWrapper>
+        <TextWrapper>
+          <h2>
+            Let me capture your Interior <span>{word}</span>
+          </h2>
+          <p>
+            I love to see what other`s do with their living places and I want to
+            show this in a best possible way.
+          </p>
+          <HandIcon></HandIcon>
+        </TextWrapper>
+      </SliderWrapper>
+    </>
+  )
+  // } else return null
 }
 
 export default ImageSlider

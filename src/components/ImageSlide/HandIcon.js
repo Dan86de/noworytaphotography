@@ -4,7 +4,10 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 const HandIconWrapper = styled(Img)`
-  width: 40px;
+  width: 30px;
+  @media (min-width: 321px) {
+    width: 40px;
+  }
   @media (min-width: 768px) {
     width: 60px;
   }
