@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
-
 import { Link } from 'gatsby'
+
+import MobileMenuDrawerButton from './MobileMenuDrawer/MobileMenuDrawerButton'
 
 const NavigationWrapper = styled.nav`
   width: 100%;
@@ -50,24 +51,6 @@ const NavigationListItem = styled.li`
       font-size: 1.25rem;
     }
   }
-  /* a.linkActive::before {
-    content: '';
-    position: absolute;
-    top: 1.65rem;
-    left: 30%;
-    width: 40%;
-    border: 2px solid;
-    color: inherited;
-    z-index: 4;
-    border-radius: 3px;
-    @media (min-width: 1280px) {
-      top: 1.8rem;
-    }
-    @media (min-width: 1920px) {
-      top: 1.7rem;
-      transform: translateY(2px);
-    }
-  } */
 `
 
 const LogoImage = styled(Image)`
@@ -82,16 +65,9 @@ const LogoImage = styled(Image)`
   }
 `
 
-const HamburgerIcon = styled(Image)`
-  width: 35px;
-  @media (min-width: 768px) {
-    display: none;
-  }
-`
-
 const query = graphql`
   {
-    allFile(filter: { extension: { regex: "/(png)/" } }) {
+    allFile(filter: { name: { regex: "/logo/" } }) {
       edges {
         node {
           id
@@ -107,19 +83,17 @@ const query = graphql`
   }
 `
 
-const Navigation = () => {
+const Navigation = props => {
   const iconsData = useStaticQuery(query)
 
   return (
     <NavigationWrapper>
       <Link to="/" exact="true">
         <LogoImage
-          fluid={iconsData.allFile.edges[2].node.childImageSharp.fluid}
+          fluid={iconsData.allFile.edges[0].node.childImageSharp.fluid}
         />
       </Link>
-      <HamburgerIcon
-        fluid={iconsData.allFile.edges[0].node.childImageSharp.fluid}
-      />
+      <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
       <NavigationList>
         <NavigationListItem>
           <Link to="/" exact="true" activeClassName="linkActive">
