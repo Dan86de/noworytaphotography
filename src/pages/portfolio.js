@@ -1,5 +1,12 @@
 import React from 'react'
+import PortfolioCollage from '../components/PortfolioCollage/PortfolioCollage'
 
-const PortfolioPage = ({ data }) => <h1>This is portfolio page</h1>
+const PortfolioPage = ({ data }) => {
+  return (
+    <>
+      <PortfolioCollage></PortfolioCollage>
+    </>
+  )
+}
 
 export default PortfolioPage

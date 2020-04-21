@@ -104,14 +104,10 @@ const PortfolioButton = styled.button`
   padding: 0.25rem 4rem;
   font-size: 1.5rem;
   font-family: ff-market-web;
-  display: none;
   cursor: pointer;
   &:hover {
     color: white;
     background-color: #384f47;
-  }
-  a {
-    text-decoration: none;
   }
   @media (min-width: 768px) {
     margin: 3rem auto;
@@ -157,7 +153,10 @@ const MasonryCollage = () => {
       <GalleryContainer id="portfolio">
         <MasonryTextBig>Work examples</MasonryTextBig>
         <GridContainer>{imageElements}</GridContainer>
-        <Link to="/portfolio" style={{ textDecoration: 'none' }}>
+        <Link
+          to="/portfolio"
+          style={{ textDecoration: 'none', width: '100%', display: 'flex' }}
+        >
           <PortfolioButton>See full portfolio</PortfolioButton>
         </Link>
       </GalleryContainer>
