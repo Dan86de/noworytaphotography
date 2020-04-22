@@ -50,7 +50,8 @@ const AboutTextMid = styled.h3`
   font-family: ff-market-web;
   font-weight: 700;
   font-size: 1.8rem;
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
   @media (min-width: 321px) {
     font-size: 2rem;
     margin: 0rem auto 1rem auto;

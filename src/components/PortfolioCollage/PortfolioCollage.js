@@ -2,6 +2,8 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
+import { injectIntl } from 'gatsby-plugin-intl'
+
 const query = graphql`
   {
     allFile(filter: { absolutePath: { regex: "/Portfolio/" } }) {
@@ -95,7 +97,7 @@ const ImageContainer1 = styled.div`
   object-fit: cover;
 `
 
-const PortfolioCollage = ({ data }) => {
+const PortfolioCollage = props => {
   const imageData = useStaticQuery(query)
   const imageElements = imageData.allFile.nodes.map((item, id) => (
     <ItemContainer key={id}>
@@ -106,10 +108,10 @@ const PortfolioCollage = ({ data }) => {
   ))
   return (
     <GalleryContainer>
-      <h1>My work examples</h1>
+      <h1>{props.intl.formatMessage({ id: 'CAROUSELSECTION.WE' })}</h1>
       <GridContainer>{imageElements}</GridContainer>
     </GalleryContainer>
   )
 }
 
-export default PortfolioCollage
+export default injectIntl(PortfolioCollage)

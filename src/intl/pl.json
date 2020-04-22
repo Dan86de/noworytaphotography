@@ -11,17 +11,17 @@
   },
 
   "HEROSECTION": {
-    "heroSliderHeading": "Pozwol mi sfotografować Twoja",
+    "heroSliderHeading": "Pozwol mi sfotografować",
     "heroSliderSpan": {
-      "Creativity": "Kreatywność",
-      "Authenticity": "Autentyczność",
-      "Personality": "Osobowość",
-      "Proportion": "Proporcje",
-      "Phantasy": "Fantazję",
-      "Mood": "Nastrój",
-      "Style": "Styl",
-      "Idea": "Pomysł",
-      "Passion": "Pasję"
+      "Creativity": "Twoją Kreatywność",
+      "Authenticity": "Twoją Autentyczność",
+      "Personality": "Twoją Osobowość",
+      "Proportion": "Twoje Proporcje",
+      "Phantasy": "Twoją Fantazję",
+      "Mood": "Twój Nastrój",
+      "Style": "Twój Styl",
+      "Idea": "Twój Pomysł",
+      "Passion": "Twoją Pasję"
     },
     "heroSliderSubheading": "Uwielbiam obserwować co inni ludzie robią ze swoimi wnątrzami. Chcę pokazać to w możliwie najlepszy sposób."
   },

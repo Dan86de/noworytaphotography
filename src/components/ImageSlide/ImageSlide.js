@@ -33,9 +33,12 @@ const TextWrapper = styled.div`
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
-  height: 50%;
+  height: 60%;
   padding: 0 1rem;
   z-index: 2;
+  @media (min-width: 321px) {
+    height: 50%;
+  }
   @media (min-width: 768px) {
   }
   @media (min-width: 1280px) {

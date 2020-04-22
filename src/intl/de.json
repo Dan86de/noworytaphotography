@@ -1,17 +1,17 @@
 {
   "title": "NoworytaPhotography ",
-  "description": "Website for Interior Photographer Katarzyna Noworyta",
+  "description": "Website der Innenraum-Fotografin Katarzyna Noworyta",
   "author": "@dnoworyta",
 
   "MENU": {
     "home": "Home",
-    "about": "Uber mich",
+    "about": "über mich",
     "portfolio": "Portfolio",
     "contact": "Kontakt"
   },
 
   "HEROSECTION": {
-    "heroSliderHeading": "Let me capture your Interior",
+    "heroSliderHeading": "Lass mich zeigen deine",
     "heroSliderSpan": {
       "Creativity": "Kreativität",
       "Authenticity": "Authentizität",
@@ -23,31 +23,31 @@
       "Idea": "Idee",
       "Passion": "Leidenschaft"
     },
-    "heroSliderSubheading": "I love to see what other`s do with their living places and I want to show this in a best possible way."
+    "heroSliderSubheading": "Ich beobachte sehr gern, was andere Menschen mit ihren Innenräumen machen. Ich will es auf der möglich besten Weise zeigen."
   },
 
   "ABOUTSECTION": {
     "About": "Uber mich",
-    "myName": "Hallo meine name is Kascha",
-    "longdesc": "I would like to tell you about my passion. I'm interior photographer. I'm doing this because every interior its unique in its own way and worth photographing. I would like to show you how to tell your interior story by using my camera. In my work I'm trying to pay attention to every detail, because",
-    "devil": "the devil is in the detail"
+    "myName": "Hallo, mein Name ist Kascha",
+    "longdesc": "Ich will dir von meiner Passion erzählen. Ich bin Innenraum-Fotografin. Ich tue es, weil jeder Innenraum auf seine Weise einmalig und zu fotografieren wert ist. Ich möchte dir zeigen, wie du eine ungewöhnliche Geschichte deines Innenraumes mit Hilfe von meinem Fotoapparat erzählen kannst. In meiner Arbeit bemühe ich mich, jedes Detail zu beachten, weil:",
+    "devil": "der Teufel steckt im Detail."
   },
 
   "CAROUSELSECTION": {
     "WE": "Portfolio",
-    "SP": "See full portfolio"
+    "SP": "Ganzes Portfolio"
   },
 
   "CONTACTSECTION": {
     "Contact": "Kontakt",
-    "ContactMsg": "If you wanna contact me feel free to use contact form below or write directly on my email:",
-    "Name": "Name",
+    "ContactMsg": "Wenn du mit mir reden willst, fülle bitte das Formular aus oder schreib an unter:",
+    "Name": "Vorname",
     "Email": "Email",
     "Message": "Nachricht",
-    "PutName": "Put your name here",
-    "PutEmail": "Put your email here",
-    "WriteMsg": "Write your message",
-    "ContactMe": "Contact Me"
+    "PutName": "Gib dein Vorname an",
+    "PutEmail": "Gib dein E-Mail an",
+    "WriteMsg": "Schreib deine Nachricht",
+    "ContactMe": "Kontakt"
   },
 
   "FOOTERSECTION": {
@@ -56,6 +56,6 @@
 
   "notfound": {
     "header": "NICHT GEFUNDEN",
-    "description": "Sie haben gerade eine Route gefunden, die es nicht gibt ... die Traurigkeit."
+    "description": "Die gesuchte Seite existiert nicht. Komm bitte auf vorige Seite zurück."
   }
 }
