@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import KikiBodyImage from '../KikiBody/KikiBody'
+import { injectIntl } from 'gatsby-plugin-intl'
 
 const FormWrapper = styled.div`
   display: flex;
@@ -232,7 +232,7 @@ const EmailAlert = styled.div`
   }
 `
 
-export default class Contact extends React.Component {
+class Contact extends React.Component {
   constructor(props) {
     super(props)
     this.submitForm = this.submitForm.bind(this)
@@ -247,41 +247,54 @@ export default class Contact extends React.Component {
 
     return (
       <FormWrapper id="contact">
-        <h1>Contact</h1>
+        <h1>
+          {this.props.intl.formatMessage({ id: 'CONTACTSECTION.Contact' })}
+        </h1>
         <p>
-          If you wanna contact me feel free to use contact form below or write
-          directly on my email:
+          {this.props.intl.formatMessage({ id: 'CONTACTSECTION.ContactMsg' })}
           <br></br>
           <br></br>
           <span>contact@noworytaphotography.com</span>{' '}
         </p>
         <form onSubmit={this.submitForm} action={email} method="POST">
           <label htmlFor="name">
-            Name:
+            {this.props.intl.formatMessage({
+              id: 'CONTACTSECTION.Name',
+            })}
             <input
               type="text"
               name="name"
-              placeholder="Put your name here"
+              placeholder={this.props.intl.formatMessage({
+                id: 'CONTACTSECTION.PutName',
+              })}
               required
             />
           </label>
 
           <label htmlFor="email">
-            Email:
+            {this.props.intl.formatMessage({
+              id: 'CONTACTSECTION.Email',
+            })}
             <input
               type="email"
               name="_replyto"
-              placeholder="Put your email here"
+              placeholder={this.props.intl.formatMessage({
+                id: 'CONTACTSECTION.PutEmail',
+              })}
               required
             />
           </label>
 
           <label htmlFor="message">
-            Message:
+            {this.props.intl.formatMessage({
+              id: 'CONTACTSECTION.Message',
+            })}
             <textarea
               rows="10"
               name="message"
-              placeholder="Write your message here"
+              placeholder={this.props.intl.formatMessage({
+                id: 'CONTACTSECTION.WriteMsg',
+              })}
               required
             ></textarea>
           </label>
@@ -291,7 +304,11 @@ export default class Contact extends React.Component {
             {status === 'SUCCESS' ? (
               <p>Thank You! I will reply in 24hrs!</p>
             ) : (
-              <button>Contact Me</button>
+              <button>
+                {this.props.intl.formatMessage({
+                  id: 'CONTACTSECTION.ContactMe',
+                })}
+              </button>
             )}
             {status === 'ERROR' && (
               <p>
@@ -327,3 +344,5 @@ export default class Contact extends React.Component {
     xhr.send(data)
   }
 }
+
+export default injectIntl(Contact)

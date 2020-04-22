@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+import { injectIntl } from 'gatsby-plugin-intl'
+
 const AboutSectionWrapper = styled.section`
   width: 100%;
   display: flex;
@@ -198,40 +200,35 @@ const query = graphql`
   }
 `
 
-const AboutSection = () => {
+const AboutSection = ({ intl }) => {
   const imageData = useStaticQuery(query)
   const AboutCollageImage = imageData.file.childImageSharp.fluid
   return (
     <>
       <AboutSectionWrapper id="about">
-        <AboutTextBigAbout>About</AboutTextBigAbout>
-        <AboutTextBig>Hi my name is Kate</AboutTextBig>
+        <AboutTextBigAbout>
+          {intl.formatMessage({ id: 'ABOUTSECTION.About' })}
+        </AboutTextBigAbout>
+        <AboutTextBig>
+          {intl.formatMessage({ id: 'ABOUTSECTION.myName' })}
+        </AboutTextBig>
         <AboutImageWrapper fluid={AboutCollageImage} />
 
         <AboutTextSmall>
-          I would like to tell you about my passion. I'm interior photographer.
-          I'm doing this because every interior its unique in its own way and
-          worth photographing. I would like to show you how to tell your
-          interior story by using my camera. In my work I'm trying to pay
-          attention to every detail, because
+          {intl.formatMessage({ id: 'ABOUTSECTION.longdesc' })}
         </AboutTextSmall>
 
-        <AboutTextMid>"the devil is in the detail"</AboutTextMid>
+        <AboutTextMid>
+          "{intl.formatMessage({ id: 'ABOUTSECTION.devil' })}"
+        </AboutTextMid>
         <AboutTextBiScreensWrapper>
-          <h1>Hi my name is Kate</h1>
-          <p>
-            {' '}
-            I would like to tell you about my passion. I'm interior
-            photographer. I'm doing this because every interior its unique in
-            its own way and worth photographing. I would like to show you how to
-            tell your interior story by using my camera. In my work I'm trying
-            to pay attention to every detail, because
-          </p>
-          <h2>"the devil is in the detail"</h2>
+          <h1>{intl.formatMessage({ id: 'ABOUTSECTION.myName' })}</h1>
+          <p>{intl.formatMessage({ id: 'ABOUTSECTION.longdesc' })}</p>
+          <h2>"{intl.formatMessage({ id: 'ABOUTSECTION.devil' })}"</h2>
         </AboutTextBiScreensWrapper>
       </AboutSectionWrapper>
     </>
   )
 }
 
-export default AboutSection
+export default injectIntl(AboutSection)

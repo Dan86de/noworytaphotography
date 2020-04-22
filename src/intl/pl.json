@@ -11,7 +11,7 @@
   },
 
   "HEROSECTION": {
-    "heroSliderHeading": "Pozwól mi sfotografować Twoją",
+    "heroSliderHeading": "Pozwol mi sfotografować Twoja",
     "heroSliderSpan": {
       "Creativity": "Kreatywność",
       "Authenticity": "Autentyczność",
@@ -23,31 +23,31 @@
       "Idea": "Pomysł",
       "Passion": "Pasję"
     },
-    "heroSliderSubheading": "Uwielbiam obserwować co inni ludzie robią ze swoimi wnętrzami. Chcę pokazać to w możliwie najlepszy sposób."
+    "heroSliderSubheading": "Uwielbiam obserwowac co inni ludzie robia ze swoimi wnetrzami. Chcę pokazac to w mozliwie najlepszy sposob."
   },
 
   "ABOUTSECTION": {
     "About": "O mnie",
-    "Hi my name is Kate": "Cześć nazywam się Kasia",
+    "myName": "Cześć nazywam się Kasia",
     "longdesc": "Chcę opowiedzieć Ci o mojej pasji. Jestem fotografem wnętrz. Robię to gdyż każde wnętrze jest na swój sposób unikalne i warte sfotografowania. Chciałabym pokazać Ci jak możesz opowiedzieć niezwykłą historię Twojego wnętrza przy użyciu mojego aparatu. W swojej pracy staram się przywiązywać uwagę do każdego detalu bo:",
-    "the devil is in the detail": "Diabeł tkwi w szczegółach"
+    "devil": "Diabeł tkwi w szczegółach"
   },
 
   "CAROUSELSECTION": {
-    "Work Examples": "Przykładowe prace",
-    "See full portfolio": "Zobacz pełne portfolio"
+    "WE": "Przykładowe prace",
+    "SP": "Zobacz pełne portfolio"
   },
 
   "CONTACTSECTION": {
     "Contact": "Kontakt",
-    "ContactMsg": "Jeżeli chcesz się ze mną skontaktować. Użyj proszę formularza poniżej lub napisz na adres : contact@noworytaphotography.com",
+    "ContactMsg": "Jeżeli chcesz się ze mną skontaktować. Użyj proszę formularza poniżej lub napisz na adres :",
     "Name": "Imię",
     "Email": "Email",
     "Message": "Wiadomość",
-    "Put your name here": "Wpisz swoje imię",
-    "Put your email here": "Wpisz swój adres email",
-    "Write your message": "Napisz swoją wiadomość",
-    "Contact Me": "Skontaktuj się ze mną"
+    "PutName": "Wpisz swoje imię",
+    "PutEmail": "Wpisz swój adres email",
+    "WriteMsg": "Napisz swoją wiadomość",
+    "ContactMe": "Skontaktuj się ze mną"
   },
 
   "FOOTERSECTION": {

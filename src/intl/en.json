@@ -28,26 +28,26 @@
 
   "ABOUTSECTION": {
     "About": "About",
-    "Hi my name is Kate": "Hi my name is Kate",
+    "myName": "Hi my name is Kate",
     "longdesc": "I would like to tell you about my passion. I'm interior photographer. I'm doing this because every interior its unique in its own way and worth photographing. I would like to show you how to tell your interior story by using my camera. In my work I'm trying to pay attention to every detail, because",
-    "the devil is in the detail": "the devil is in the detail"
+    "devil": "the devil is in the detail"
   },
 
   "CAROUSELSECTION": {
-    "Work Examples": "Work Examples",
-    "See full portfolio": "See full portfolio"
+    "WE": "Work Examples",
+    "SP": "See full portfolio"
   },
 
   "CONTACTSECTION": {
     "Contact": "Contact",
-    "ContactMsg": "If you wanna contact me feel free to use contact form below or write directly on my email: contact@noworytaphotography.com",
+    "ContactMsg": "If you wanna contact me feel free to use contact form below or write directly on my email:",
     "Name": "Name",
     "Email": "Email",
     "Message": "Message",
-    "Put your name here": "Put your name here",
-    "Put your email here": "Put your email here",
-    "Write your message": "Write your message",
-    "Contact Me": "Contact Me"
+    "PutName": "Put your name here",
+    "PutEmail": "Put your email here",
+    "WriteMsg": "Write your message",
+    "ContactMe": "Contact Me"
   },
 
   "FOOTERSECTION": {

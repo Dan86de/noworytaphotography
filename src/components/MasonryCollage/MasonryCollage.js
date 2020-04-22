@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby'
 // import Img from 'gatsby-image'
+import { injectIntl, Link } from 'gatsby-plugin-intl'
 
 const GalleryContainer = styled.div`
   width: 100%;
@@ -139,7 +139,7 @@ const query = graphql`
   }
 `
 
-const MasonryCollage = () => {
+const MasonryCollage = ({ intl }) => {
   const imageData = useStaticQuery(query)
 
   const imageElements = imageData.allFile.nodes.map((item, id) => (
@@ -151,17 +151,21 @@ const MasonryCollage = () => {
   return (
     <>
       <GalleryContainer id="portfolio">
-        <MasonryTextBig>Work examples</MasonryTextBig>
+        <MasonryTextBig>
+          {intl.formatMessage({ id: 'CAROUSELSECTION.WE' })}
+        </MasonryTextBig>
         <GridContainer>{imageElements}</GridContainer>
         <Link
           to="/portfolio"
           style={{ textDecoration: 'none', width: '100%', display: 'flex' }}
         >
-          <PortfolioButton>See full portfolio</PortfolioButton>
+          <PortfolioButton>
+            {intl.formatMessage({ id: 'CAROUSELSECTION.SP' })}
+          </PortfolioButton>
         </Link>
       </GalleryContainer>
     </>
   )
 }
 
-export default MasonryCollage
+export default injectIntl(MasonryCollage)

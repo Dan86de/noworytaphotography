@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { injectIntl, Link } from 'gatsby-plugin-intl'
 
 const MobileMenuDrawerWrapper = styled.div`
   position: fixed;
@@ -47,22 +47,22 @@ const MobileMenuDrawer = props => {
       <NavigationList>
         <NavigationListItem onClick={props.linkClick}>
           <Link to="/" exact="true" activeClassName="linkActive">
-            Home
+            {props.intl.formatMessage({ id: 'MENU.home' })}
           </Link>
         </NavigationListItem>
         <NavigationListItem onClick={props.linkClick}>
           <Link to="#about" activeClassName="linkActive">
-            About
+            {props.intl.formatMessage({ id: 'MENU.about' })}
           </Link>
         </NavigationListItem>
         <NavigationListItem onClick={props.linkClick}>
           <Link to="#portfolio" activeClassName="linkActive">
-            Portfolio
+            {props.intl.formatMessage({ id: 'MENU.portfolio' })}
           </Link>
         </NavigationListItem>
         <NavigationListItem onClick={props.linkClick}>
           <Link to="#contact" activeClassName="linkActive">
-            Contact
+            {props.intl.formatMessage({ id: 'MENU.contact' })}
           </Link>
         </NavigationListItem>
       </NavigationList>
@@ -70,4 +70,4 @@ const MobileMenuDrawer = props => {
   )
 }
 
-export default MobileMenuDrawer
+export default injectIntl(MobileMenuDrawer)

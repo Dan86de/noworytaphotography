@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
-import { Link } from 'gatsby'
+import { injectIntl, Link } from 'gatsby-plugin-intl'
 
 import MobileMenuDrawerButton from './MobileMenuDrawer/MobileMenuDrawerButton'
 
@@ -96,23 +96,23 @@ const Navigation = props => {
       <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
       <NavigationList>
         <NavigationListItem>
-          <Link to="/" exact="true" activeClassName="linkActive">
-            Home
+          <Link to="/" activeClassName="linkActive">
+            {props.intl.formatMessage({ id: 'MENU.home' })}
           </Link>
         </NavigationListItem>
         <NavigationListItem>
           <Link to="#about" activeClassName="linkActive">
-            About
+            {props.intl.formatMessage({ id: 'MENU.about' })}
           </Link>
         </NavigationListItem>
         <NavigationListItem>
           <Link to="#portfolio" activeClassName="linkActive">
-            Portfolio
+            {props.intl.formatMessage({ id: 'MENU.portfolio' })}
           </Link>
         </NavigationListItem>
         <NavigationListItem>
           <Link to="#contact" activeClassName="linkActive">
-            Contact
+            {props.intl.formatMessage({ id: 'MENU.contact' })}
           </Link>
         </NavigationListItem>
       </NavigationList>
@@ -120,4 +120,4 @@ const Navigation = props => {
   )
 }
 
-export default Navigation
+export default injectIntl(Navigation)
