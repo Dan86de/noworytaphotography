@@ -1,0 +1,61 @@
+{
+  "title": "NoworytaPhotography ",
+  "description": "Website for Interior Photographer Katarzyna Noworyta",
+  "author": "@dnoworyta",
+
+  "MENU": {
+    "home": "Home",
+    "about": "Uber mich",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt"
+  },
+
+  "HEROSECTION": {
+    "heroSliderHeading": "Let me capture your Interior",
+    "heroSliderSpan": {
+      "Creativity": "Kreativität",
+      "Authenticity": "Authentizität",
+      "Personality": "Persönlichkeit",
+      "Proportion": "Proportion",
+      "Phantasy": "Phantasie",
+      "Mood": "Stimmung",
+      "Style": "Style",
+      "Idea": "Idee",
+      "Passion": "Leidenschaft"
+    },
+    "heroSliderSubheading": "I love to see what other`s do with their living places and I want to show this in a best possible way."
+  },
+
+  "ABOUTSECTION": {
+    "About": "Uber mich",
+    "myName": "Hallo meine name is Kascha",
+    "longdesc": "I would like to tell you about my passion. I'm interior photographer. I'm doing this because every interior its unique in its own way and worth photographing. I would like to show you how to tell your interior story by using my camera. In my work I'm trying to pay attention to every detail, because",
+    "devil": "the devil is in the detail"
+  },
+
+  "CAROUSELSECTION": {
+    "WE": "Portfolio",
+    "SP": "See full portfolio"
+  },
+
+  "CONTACTSECTION": {
+    "Contact": "Kontakt",
+    "ContactMsg": "If you wanna contact me feel free to use contact form below or write directly on my email:",
+    "Name": "Name",
+    "Email": "Email",
+    "Message": "Nachricht",
+    "PutName": "Put your name here",
+    "PutEmail": "Put your email here",
+    "WriteMsg": "Write your message",
+    "ContactMe": "Contact Me"
+  },
+
+  "FOOTERSECTION": {
+    "Copyright": "Copyright"
+  },
+
+  "notfound": {
+    "header": "NICHT GEFUNDEN",
+    "description": "Sie haben gerade eine Route gefunden, die es nicht gibt ... die Traurigkeit."
+  }
+}

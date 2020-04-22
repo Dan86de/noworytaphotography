@@ -5,6 +5,7 @@ import Image from 'gatsby-image'
 import { injectIntl, Link } from 'gatsby-plugin-intl'
 
 import MobileMenuDrawerButton from './MobileMenuDrawer/MobileMenuDrawerButton'
+import LangChoose from '../Language/Language'
 
 const NavigationWrapper = styled.nav`
   width: 100%;
@@ -83,6 +84,13 @@ const query = graphql`
   }
 `
 
+const LangChooseWrap = styled.div`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`
+
 const Navigation = props => {
   const iconsData = useStaticQuery(query)
 
@@ -93,6 +101,9 @@ const Navigation = props => {
           fluid={iconsData.allFile.edges[0].node.childImageSharp.fluid}
         />
       </Link>
+      <LangChooseWrap>
+        <LangChoose></LangChoose>
+      </LangChooseWrap>
       <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
       <NavigationList>
         <NavigationListItem>

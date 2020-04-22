@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { injectIntl, Link } from 'gatsby-plugin-intl'
+import LangChoose from '../../Language/Language'
 
 const MobileMenuDrawerWrapper = styled.div`
   position: fixed;
@@ -41,6 +42,11 @@ const NavigationListItem = styled.li`
   }
 `
 
+const LangChooseWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
 const MobileMenuDrawer = props => {
   return (
     <MobileMenuDrawerWrapper show={props.show}>
@@ -66,6 +72,9 @@ const MobileMenuDrawer = props => {
           </Link>
         </NavigationListItem>
       </NavigationList>
+      <LangChooseWrap>
+        <LangChoose />
+      </LangChooseWrap>
     </MobileMenuDrawerWrapper>
   )
 }
