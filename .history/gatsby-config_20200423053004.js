@@ -3,10 +3,8 @@ module.exports = {
     title: `Noworytaphotography Website`,
     description: `Website for Interior Photographer Katarzyna Noworyta`,
     author: `@danielnoworyta`,
-    siteUrl: `https://www.noworytaphotography.com`,
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-layout`,

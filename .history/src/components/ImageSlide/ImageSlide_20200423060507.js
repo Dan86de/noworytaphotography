@@ -217,7 +217,9 @@ const ImageSlider = ({ intl }) => {
                 'slide-7.jpg',
                 'slide-8.jpg',
                 'slide-9.jpg',
-                'slide-10.JPG',
+                'slide-10.jpg',
+                'slide-11.jpg',
+                'slide-12.JPG',
               ]}
               style={
                 isDesktop

@@ -126,12 +126,12 @@ const PortfolioButton = styled.button`
 
 const query = graphql`
   {
-    allFile(filter: { absolutePath: { regex: "/CollageImages/" } }) {
+    allFile(filter: { absolutePath: { regex: "/Collage/" } }) {
       nodes {
         id
         childImageSharp {
           fluid(maxWidth: 640, maxHeight: 400, quality: 100) {
-            ...GatsbyImageSharpFluid_tracedSVG
+            src
           }
         }
       }

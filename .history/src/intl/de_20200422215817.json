@@ -1,0 +1,61 @@
+{
+  "title": "NoworytaPhotography ",
+  "description": "Website der Innenraum-Fotografin Katarzyna Noworyta",
+  "author": "@dnoworyta",
+
+  "MENU": {
+    "home": "Home",
+    "about": "über mich",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt"
+  },
+
+  "HEROSECTION": {
+    "heroSliderHeading": "Lass mich zeigen deine",
+    "heroSliderSpan": {
+      "Creativity": "Kreativität",
+      "Authenticity": "Authentizität",
+      "Personality": "Persönlichkeit",
+      "Proportion": "Proportion",
+      "Phantasy": "Phantasie",
+      "Mood": "Stimmung",
+      "Style": "Style",
+      "Idea": "Idee",
+      "Passion": "Leidenschaft"
+    },
+    "heroSliderSubheading": "Ich beobachte sehr gern, was andere Menschen mit ihren Innenräumen machen. Ich will es auf der möglich besten Weise zeigen."
+  },
+
+  "ABOUTSECTION": {
+    "About": "Uber mich",
+    "myName": "Hallo, mein Name ist Kascha",
+    "longdesc": "Ich will dir von meiner Passion erzählen. Ich bin Innenraum-Fotografin. Ich tue es, weil jeder Innenraum auf seine Weise einmalig und zu fotografieren wert ist. Ich möchte dir zeigen, wie du eine ungewöhnliche Geschichte deines Innenraumes mit Hilfe von meinem Fotoapparat erzählen kannst. In meiner Arbeit bemühe ich mich, jedes Detail zu beachten, weil:",
+    "devil": "der Teufel steckt im Detail."
+  },
+
+  "CAROUSELSECTION": {
+    "WE": "Portfolio",
+    "SP": "Ganzes Portfolio"
+  },
+
+  "CONTACTSECTION": {
+    "Contact": "Kontakt",
+    "ContactMsg": "Wenn du mit mir reden willst, fülle bitte das Formular aus oder schreib an unter:",
+    "Name": "Vorname",
+    "Email": "Email",
+    "Message": "Nachricht",
+    "PutName": "Gib dein Vorname an",
+    "PutEmail": "Gib dein E-Mail an",
+    "WriteMsg": "Schreib deine Nachricht",
+    "ContactMe": "Kontakt"
+  },
+
+  "FOOTERSECTION": {
+    "Copyright": "Copyright"
+  },
+
+  "notfound": {
+    "header": "NICHT GEFUNDEN",
+    "description": "Die gesuchte Seite existiert nicht. Komm bitte auf vorige Seite zurück."
+  }
+}

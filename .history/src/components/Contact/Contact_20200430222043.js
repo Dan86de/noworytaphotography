@@ -155,9 +155,6 @@ const BodyImageWrapper = styled.div`
   @media (min-width: 1000px) {
     width: 37%;
   }
-  @media (min-width: 1040px) {
-    width: 35%;
-  }
   @media (min-width: 1280px) {
     width: 35%;
     right: 4rem;

@@ -10,8 +10,8 @@ const query = graphql`
       nodes {
         id
         childImageSharp {
-          fluid(maxWidth: 1920, quality: 90) {
-            ...GatsbyImageSharpFluid_tracedSVG
+          fixed(width: 870, quality: 90) {
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }

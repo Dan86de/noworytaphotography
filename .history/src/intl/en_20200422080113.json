@@ -29,7 +29,7 @@
   "ABOUTSECTION": {
     "About": "About",
     "myName": "Hi my name is Kate",
-    "longdesc": "I would like to tell you about my passion. I'm interior photographer. I'm doing this because every interior is unique in its own way and worth photographing. I would like to show you how to tell your interior story by using my camera. In my work I'm trying to pay attention to every detail, because",
+    "longdesc": "I would like to tell you about my passion. I'm interior photographer. I'm doing this because every interior its unique in its own way and worth photographing. I would like to show you how to tell your interior story by using my camera. In my work I'm trying to pay attention to every detail, because",
     "devil": "the devil is in the detail"
   },
 
@@ -40,7 +40,7 @@
 
   "CONTACTSECTION": {
     "Contact": "Contact",
-    "ContactMsg": "If you wanna contact me feel free to use the contact form below or write directly on my email:",
+    "ContactMsg": "If you wanna contact me feel free to use contact form below or write directly on my email:",
     "Name": "Name",
     "Email": "Email",
     "Message": "Message",
