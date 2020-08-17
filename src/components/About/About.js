@@ -112,12 +112,15 @@ const AboutTextBigAbout = styled.h2`
     position: absolute;
     top: 200%;
     left: -35%;
-    font-size: 28rem;
+    font-size: 24rem;
     opacity: 0.1;
     font-family: ff-market-web;
     z-index: -3;
     letter-spacing: 3rem;
     transform: rotate(-40deg);
+    @media (min-width: 1024px) {
+      left: -10%;
+    }
     @media (min-width: 1280px) {
       transform: rotate(15deg);
       top: -5%;
