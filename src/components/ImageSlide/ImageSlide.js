@@ -139,107 +139,108 @@ const TextWrapper = styled.div`
 `
 
 const ImageSlider = ({ intl }) => {
-  if (typeof window !== `undefined`) {
-    const Words = [
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Creativity',
-      }),
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Authenticity',
-      }),
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Personality',
-      }),
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Proportion',
-      }),
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Phantasy',
-      }),
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Mood',
-      }),
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Style',
-      }),
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Idea',
-      }),
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Passion',
-      }),
-    ]
-    const [word, setWord] = React.useState(
-      intl.formatMessage({
-        id: 'HEROSECTION.heroSliderSpan.Passion',
-      })
-    )
+  // if (typeof window !== `undefined`) {
+  const Words = [
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Creativity',
+    }),
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Authenticity',
+    }),
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Personality',
+    }),
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Proportion',
+    }),
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Phantasy',
+    }),
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Mood',
+    }),
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Style',
+    }),
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Idea',
+    }),
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Passion',
+    }),
+  ]
+  const [word, setWord] = React.useState(
+    intl.formatMessage({
+      id: 'HEROSECTION.heroSliderSpan.Passion',
+    })
+  )
 
-    let isDesktop = false
-    let width = window.innerWidth
-    if (width >= 1280) {
-      isDesktop = true
-    }
+  let isDesktop = false
+  let width = window.innerWidth
+  if (width >= 1280) {
+    isDesktop = true
+  }
 
-    return (
-      <>
-        <SliderWrapper>
-          <ImageSlideWrapper>
-            <BackgroundSlider
-              callbacks={{ onChange: i => setWord(Words[i % 8]) }}
-              query={useStaticQuery(graphql`
-                query {
-                  backgrounds: allFile(
-                    filter: { absolutePath: { regex: "/Slider/" } }
-                  ) {
-                    nodes {
-                      id
-                      relativePath
-                      childImageSharp {
-                        fluid(maxWidth: 1920, maxHeight: 1500, quality: 100) {
-                          ...GatsbyImageSharpFluid
-                        }
+  return (
+    <>
+      <SliderWrapper>
+        <ImageSlideWrapper>
+          <BackgroundSlider
+            callbacks={{ onChange: i => setWord(Words[i % 8]) }}
+            query={useStaticQuery(graphql`
+              query {
+                backgrounds: allFile(
+                  filter: { absolutePath: { regex: "/Slider/" } }
+                ) {
+                  nodes {
+                    id
+                    relativePath
+                    childImageSharp {
+                      fluid(maxWidth: 1920, maxHeight: 1500, quality: 100) {
+                        ...GatsbyImageSharpFluid
                       }
                     }
                   }
                 }
-              `)}
-              initDelay={4}
-              transition={3}
-              duration={10}
-              images={[
-                'slide-1.jpg',
-                'slide-2.jpg',
-                'slide-3.jpg',
-                'slide-4.jpg',
-                'slide-5.jpg',
-                'slide-6.jpg',
-                'slide-7.jpg',
-                'slide-8.jpg',
-                'slide-9.jpg',
-                'slide-10.JPG',
-              ]}
-              style={
-                isDesktop
-                  ? { height: '100%', width: '50%', marginLeft: '50%' }
-                  : { height: '50%' }
               }
-            ></BackgroundSlider>
-          </ImageSlideWrapper>
-          <TextWrapper>
-            <h2>
-              {intl.formatMessage({ id: 'HEROSECTION.heroSliderHeading' })}{' '}
-              <span>{word}</span>
-            </h2>
-            <p>
-              {intl.formatMessage({ id: 'HEROSECTION.heroSliderSubheading' })}
-            </p>
-            <HandIcon></HandIcon>
-          </TextWrapper>
-        </SliderWrapper>
-      </>
-    )
-  } else return null
+            `)}
+            initDelay={4}
+            transition={3}
+            duration={10}
+            images={[
+              'slide-1.jpg',
+              'slide-2.jpg',
+              'slide-3.jpg',
+              'slide-4.jpg',
+              'slide-5.jpg',
+              'slide-6.jpg',
+              'slide-7.jpg',
+              'slide-8.jpg',
+              'slide-9.jpg',
+              'slide-10.JPG',
+            ]}
+            style={
+              isDesktop
+                ? { height: '100%', width: '50%', marginLeft: '50%' }
+                : { height: '50%' }
+            }
+          ></BackgroundSlider>
+        </ImageSlideWrapper>
+        <TextWrapper>
+          <h2>
+            {intl.formatMessage({ id: 'HEROSECTION.heroSliderHeading' })}{' '}
+            <span>{word}</span>
+          </h2>
+          <p>
+            {intl.formatMessage({ id: 'HEROSECTION.heroSliderSubheading' })}
+          </p>
+          <HandIcon></HandIcon>
+        </TextWrapper>
+      </SliderWrapper>
+    </>
+  )
 }
+// } else return null
+// }
 
 export default injectIntl(ImageSlider)

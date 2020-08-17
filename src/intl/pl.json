@@ -51,7 +51,23 @@
   },
 
   "FOOTERSECTION": {
-    "Copyright": "Prawa autorskie"
+    "Copyright": "© Prawa autorskie 2020 ",
+    "Privacy": "Polityka prywatności"
+  },
+
+  "PRIVACYPOLICY": {
+    "PrivacyPolicy": "Polityka Prywatności",
+    "PrivacyPolicyDetail": "Niniejsza polityka prywatności i plików cookies opisuje zasady postępowania z danymi osobowymi oraz wykorzystywania plików cookies i innych technologii w ramach strony internetowej https://noworytaphotography.com Administratorem strony jest Katarzyna Noworyta, z siedzibą w Kolonii 50-996 Grungurtelstr. 10. Kontakt z administratorem możliwy pod pod adresem e-mail contact@noworytaphotography.com",
+    "Definition": "Definicje",
+    "DefinitionDetail": "1.Na potrzeby niniejszej polityki prywatności, przyjmuje się następujące znaczenie poniższych pojęć: a) Administrator – Katarzyna Noworyta, z siedzibą w Kolonii 50-996, Grungurtelstr. 10. b) Strona – strona internetowa dostępna pod adresem https://noworytaphotography.com c) Użytkownik – każdy podmiot, który korzysta ze Strony.",
+    "PersonalData": "Dane Personalne",
+    "PersonalDataDetail": "1. Użytkownik może przekazywać swoje dane osobowe Administratorowi za pomocą formularzy dostępnych na Stronie, takich jak newsletter. 2. Administratorem danych osobowych Użytkownika jest Administrator. 3. Dane przekazane Administratorowi w ramach formularza newsletter przetwarzane są w celu informacji o nowościach, promocjach i produktach pochodzących od Noworytaphotography 4. Administrator gwarantuje poufność wszelkich przekazanych mu danych osobowych. 5.Podanie danych jest zawsze dobrowolne, ale niezbędne do podjęcia przez Użytkownika akcji, do której przeznaczony jest dany formularz. 6. Administrator nie udostępnia przekazanych mu danych jakimkolwiek podmiotom trzecim. 7. Dane osobowe są gromadzone z należytą starannością i odpowiednio chronione przed dostępem do nich przez osoby do tego nieupoważnione. 8. Użytkownikowi przysługują następujące uprawnienia: a) prawo do żądania dostępu do danych osobowych dotyczących osoby której dane dotyczą, ich sprostowania, usunięcia lub ograniczenia przetwarzania, b) prawo do wniesienia sprzeciwu wobec przetwarzania, c) prawo do przenoszenia danych, d) prawo do cofnięcia zgody na przetwarzanie danych osobowych w określonym celu, jeżeli Użytkownik uprzednio taką zgodę wyraził, e) prawo do wniesienia skargi do organu nadzorczego w związku z przetwarzaniem danych osobowych przez Administratora",
+    "Cookies": "Cookies",
+    "CookiesDetails": "1. Administrator wykorzystuje pliki cookies (ciasteczka), czyli niewielkie informacje tekstowe, przechowywane na urządzeniu końcowym Użytkownika (np. komputerze, tablecie, smartfonie). Cookies mogą być odczytywane przez system teleinformatyczny Administratora. 2. Administrator przechowuje pliki cookies na urządzeniu końcowym Użytkownika, a następnie uzyskuje dostęp do informacji w nich zawartych w celach statystycznych, w celach marketingowych (remarketing, odzyskiwanie porzuconych koszyków) oraz w celu zapewnienia prawidłowego działania Strony. 3. Administrator informuje niniejszym Użytkownika, że istnieje możliwość takiej konfiguracji przeglądarki internetowej, która uniemożliwia przechowywanie plików cookies na urządzeniu końcowym Użytkownika. W takiej sytuacji, korzystanie ze Strony przez Użytkownika może być utrudnione. 4. Administrator wskazuje niniejszym, że pliki cookies mogą być przez Użytkownika usunięte po ich zapisaniu przez Administratora, poprzez odpowiednie funkcje przeglądarki internetowej, programy służące w tym celu lub skorzystanie z odpowiednich narzędzi dostępnych w ramach systemu operacyjnego, z którego korzysta Użytkownik.",
+    "ServerLogs": "Logi Servera",
+    "ServerLogsDetails": "1. Korzystanie ze Strony wiąże się z przesyłaniem zapytań do serwera, na którym przechowywana jest Strona. 2. Każde zapytanie skierowane do serwera zapisywane jest w logach serwera. Logi obejmują m.in. adres IP Użytkownika, datę i czas serwera, informacje o przeglądarce internetowej i systemie operacyjnym, z jakiego korzysta Użytkownik. 3. Logi zapisywane i przechowywane są na serwerze. 4. Dane zapisane w logach serwera nie są kojarzone z konkretnymi osobami korzystającymi ze Strony i nie są wykorzystywane przez Administratora w celu identyfikacji Użytkownika. 5. Logi serwera stanowią wyłącznie materiał pomocniczy służący do administrowania Stroną, a ich zawartość nie jest ujawniana nikomu poza osobami upoważnionymi do administrowania serwerem.",
+    "InformationUpdate": "Aktualizacja informacji",
+    "InformationUpdateDetails": "1. Prosimy o informację w przypadku konieczności skorygowania lub zaktualizowania danych osobowych, w których posiadaniu jesteśmy"
   },
 
   "notfound": {

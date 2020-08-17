@@ -55,16 +55,3 @@ class MainLayout extends Component {
 }
 
 export default MainLayout
-
-// const MainLayout = ({ children }) => (
-//   <>
-//     <GlobalStyle />
-//     <Backdrop />
-//     <MobileMenuDrawer />
-//     <Navigation />
-//     <ContentWrapper>{children}</ContentWrapper>
-//     <Footer />
-//   </>
-// )
-
-// export default MainLayout
