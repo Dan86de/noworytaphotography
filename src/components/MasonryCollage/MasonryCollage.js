@@ -30,9 +30,12 @@ const MasonryTextBig = styled.h1`
   }
   @media (min-width: 1280px) {
     font-size: 3.5rem;
+    text-align: left;
+    padding: 0 3rem;
   }
   @media (min-width: 1920px) {
     font-size: 4rem;
+    padding: 0 5rem;
   }
 `
 
