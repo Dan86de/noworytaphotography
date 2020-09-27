@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import ReferencesCarousel from './ReferencesCarousel'
+
 const StyledWrapper = styled.div`
   width: 100%;
   padding: 0 1rem;
@@ -21,15 +23,7 @@ const StyledWrapper = styled.div`
 const References = () => {
   return (
     <StyledWrapper>
-      <h1>References here</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
-        magni nobis aliquam animi ipsa sapiente! Ab unde vitae animi libero
-        tenetur delectus suscipit, itaque quia minima ad. Eos velit magni quasi,
-        eius est nesciunt deleniti quisquam quis, eligendi assumenda sapiente
-        repellendus animi perferendis sint commodi harum ad earum, repudiandae
-        repellat!
-      </p>
+      <ReferencesCarousel />
     </StyledWrapper>
   )
 }
