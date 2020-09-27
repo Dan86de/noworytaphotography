@@ -34,7 +34,6 @@ const PrivacyLink = styled(Link)`
 `
 
 const Footer = ({ intl }) => {
-  console.log(intl)
   return (
     <FooterWrapper>
       <FooterTextWrapper>

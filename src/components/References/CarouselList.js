@@ -1,11 +1,23 @@
 import React from 'react'
 
-const CarouselList = () => {
+import CarouselListItem from './CarouselListItem'
+
+const CarouselList = ({
+  activeReferenceId,
+  references,
+  setActiveReferenceId,
+}) => {
   return (
     <ul>
-      <li>Monika Ronewicz</li>
-      <li>Rutkowski and Hag</li>
-      <li>Max Mustermann</li>
+      {references.map(reference => {
+        return (
+          <CarouselListItem
+            key={reference.id}
+            reference={reference}
+            setActiveReferenceId={setActiveReferenceId}
+          />
+        )
+      })}
     </ul>
   )
 }
