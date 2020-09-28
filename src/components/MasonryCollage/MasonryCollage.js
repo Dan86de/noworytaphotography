@@ -25,6 +25,7 @@ const MasonryTextBig = styled.h1`
   font-family: ff-market-web;
   font-size: 2.5rem;
   text-align: center;
+  font-weight: 700;
   @media (min-width: 768px) {
     font-size: 3rem;
   }
@@ -34,8 +35,8 @@ const MasonryTextBig = styled.h1`
     padding: 0 3rem;
   }
   @media (min-width: 1920px) {
-    font-size: 4rem;
-    padding: 0 5rem;
+    font-size: 5rem;
+    padding: 0 7rem;
   }
 `
 

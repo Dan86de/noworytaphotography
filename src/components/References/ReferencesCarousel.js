@@ -17,7 +17,7 @@ const StyledCarouselBodyWrapper = styled.div`
 `
 
 const ReferencesCarousel = () => {
-  const [referencesData] = useState([
+  const referencesData = [
     {
       id: 0,
       name: 'Monika Ronewicz',
@@ -45,7 +45,7 @@ const ReferencesCarousel = () => {
       refBody:
         'Sehr empfehlenswert! Immer wieder ein Vergnügen mit dir Immobilienfotos zu machen. Super Ideen, der geschmackvolle Blick für die Details und perfekte Gefühl für Homestaging. Du setzt unsere Immobilien immer richtig in Szene. Jede Zusammenarbeit mit Dir war perfekt, unkompliziert und professionell. Danke für die tollen Fotos. Freuen uns schon darauf, diese für unsere Website und Exposé nutzen zu dürfen.',
     },
-  ])
+  ]
 
   const [activeReferenceId, setActiveReferenceId] = useState(0)
 

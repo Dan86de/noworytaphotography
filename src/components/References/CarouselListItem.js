@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const StyledItemWrapper = styled.li`
@@ -40,13 +40,11 @@ const ItemBodyWrapper = styled.div`
   }
 `
 
-const CarouselListItem = ({ reference, setActiveReferenceId }) => {
-  const [isActive, setIsActive] = useState(false)
+const CarouselListItem = ({ reference, setActiveReferenceId, isActive }) => {
   return (
     <StyledItemWrapper
       key={reference.id}
       onClick={() => {
-        setIsActive(prevState => !prevState)
         setActiveReferenceId(reference.id)
       }}
       className={isActive && 'active'}
