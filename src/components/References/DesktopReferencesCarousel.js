@@ -7,7 +7,10 @@ import ReferenceBody from './ReferenceBody.js'
 
 const StyledCarouselWrapper = styled.div`
   width: 100%;
-  display: flex;
+  display: none;
+  @media (min-width: 1280px) {
+    display: flex;
+  }
 `
 const StyledCarouselListWrapper = styled.div`
   width: 50%;
@@ -23,7 +26,7 @@ const DesktopReferencesCarousel = () => {
       id: 0,
       name: 'Monika Ronewicz',
       position: 'General Manager, Felicita',
-      refTitle: 'Sehr empfehlenswert!',
+      refTitle: 'Cool person!',
       refStars: 4,
       refBody:
         'Sehr empfehlenswert! Immer wieder ein Vergnügen mit dir Immobilienfotos zu machen. Super Ideen, der geschmackvolle Blick für die Details und perfekte Gefühl für Homestaging. Du setzt unsere Immobilien immer richtig in Szene. Jede Zusammenarbeit mit Dir war perfekt, unkompliziert und professionell. Danke für die tollen Fotos. Freuen uns schon darauf, diese für unsere Website und Exposé nutzen zu dürfen.',
@@ -41,7 +44,7 @@ const DesktopReferencesCarousel = () => {
       id: 2,
       name: 'Max Musterman',
       position: 'Sales Manager, Musterman GmBh',
-      refTitle: 'Sehr empfehlenswert!',
+      refTitle: 'Immer wieder arbeiten',
       refStars: 5,
       refBody:
         'Sehr empfehlenswert! Immer wieder ein Vergnügen mit dir Immobilienfotos zu machen. Super Ideen, der geschmackvolle Blick für die Details und perfekte Gefühl für Homestaging. Du setzt unsere Immobilien immer richtig in Szene. Jede Zusammenarbeit mit Dir war perfekt, unkompliziert und professionell. Danke für die tollen Fotos. Freuen uns schon darauf, diese für unsere Website und Exposé nutzen zu dürfen.',
