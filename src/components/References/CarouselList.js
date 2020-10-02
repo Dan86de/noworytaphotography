@@ -6,10 +6,12 @@ const CarouselList = ({
   activeReferenceId,
   references,
   setActiveReferenceId,
+  handlePause,
 }) => {
   const listItems = references.map(reference => {
     return (
       <CarouselListItem
+        handlePause={handlePause}
         isActive={reference.id === activeReferenceId}
         key={reference.id}
         reference={reference}

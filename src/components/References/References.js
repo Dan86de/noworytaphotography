@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ReferencesCarousel from './ReferencesCarousel'
+import DesktopReferencesCarousel from './DesktopReferencesCarousel'
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -42,7 +42,7 @@ const References = () => {
   return (
     <StyledWrapper>
       <h2>Testimonials</h2>
-      <ReferencesCarousel />
+      <DesktopReferencesCarousel />
     </StyledWrapper>
   )
 }

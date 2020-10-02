@@ -9,9 +9,11 @@ const StyledItemWrapper = styled.li`
   max-width: 626px;
   padding: 0 32px;
   border: 4px solid white;
+  border-radius: 5px;
   background-color: white;
-  border-radius: 15px;
   margin-bottom: 24px;
+  transition: all 0.3s linear;
+  cursor: pointer;
   &:hover,
   &.active {
     border: 4px solid #384f47;
@@ -40,11 +42,22 @@ const ItemBodyWrapper = styled.div`
   }
 `
 
-const CarouselListItem = ({ reference, setActiveReferenceId, isActive }) => {
+const CarouselListItem = ({
+  reference,
+  setActiveReferenceId,
+  isActive,
+  handlePause,
+}) => {
   return (
     <StyledItemWrapper
       key={reference.id}
       onClick={() => {
+        setActiveReferenceId(reference.id)
+      }}
+      // onMouseEnter={() => handlePause(false)}
+      onMouseLeave={() => handlePause(true)}
+      onMouseOver={() => {
+        handlePause(false)
         setActiveReferenceId(reference.id)
       }}
       className={isActive && 'active'}

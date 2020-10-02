@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import useInterval from './useIntervalHook'
 
 import CarouselList from './CarouselList'
 import ReferenceBody from './ReferenceBody.js'
@@ -16,7 +17,7 @@ const StyledCarouselBodyWrapper = styled.div`
   width: 50%;
 `
 
-const ReferencesCarousel = () => {
+const DesktopReferencesCarousel = () => {
   const referencesData = [
     {
       id: 0,
@@ -48,12 +49,32 @@ const ReferencesCarousel = () => {
   ]
 
   const [activeReferenceId, setActiveReferenceId] = useState(0)
+  let delay = 5000
+  const [isRunning, setIsRunning] = useState(true)
+
+  useInterval(
+    () => {
+      setActiveReferenceId(prevState => {
+        if (prevState <= 1) {
+          return prevState + 1
+        } else {
+          return 0
+        }
+      })
+    },
+    isRunning ? delay : null
+  )
+
+  function handleIntervalPause(value) {
+    setIsRunning(prevState => value)
+  }
 
   return (
     <>
       <StyledCarouselWrapper>
         <StyledCarouselListWrapper>
           <CarouselList
+            handlePause={handleIntervalPause}
             activeReferenceId={activeReferenceId}
             references={referencesData}
             setActiveReferenceId={setActiveReferenceId}
@@ -67,4 +88,4 @@ const ReferencesCarousel = () => {
   )
 }
 
-export default ReferencesCarousel
+export default DesktopReferencesCarousel
