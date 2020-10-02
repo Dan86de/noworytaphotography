@@ -5,7 +5,7 @@ const StyledItemWrapper = styled.li`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 90%;
   max-width: 626px;
   padding: 0 32px;
   border: 4px solid white;
