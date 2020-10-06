@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const StyledWrapper = styled.div`
@@ -48,7 +48,7 @@ const ReferenceNavElement = styled.div`
 const SingleMobileReferenceBody = ({ reference }) => {
   const { id, refTitle, refBody, name, position } = reference
   return (
-    <StyledWrapper>
+    <StyledWrapper key={id}>
       <ReferenceBody>
         <h3>{refTitle}</h3>
         <span>Stars: * * * * *</span>

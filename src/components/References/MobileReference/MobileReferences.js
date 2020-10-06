@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Carousel from 'react-elastic-carousel'
-import Item from 'react-elastic-carousel'
 
 import SingleMobileReferenceBody from './SingleMobileReferenceBody'
 
@@ -69,7 +68,7 @@ class MobileReference extends Component {
   }
   render() {
     const itemsToRender = referencesData.map(item => (
-      <SingleMobileReferenceBody reference={item} />
+      <SingleMobileReferenceBody key={item.id} reference={item} />
     ))
     return (
       <StyledWrapper>
