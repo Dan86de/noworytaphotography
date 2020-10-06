@@ -26,6 +26,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-elastic-carousel": "^0.8.1",
     "react-helmet": "^5.2.1",
     "react-photo-collage": "^1.0.7",
     "react-touch-carousel": "^0.9.4",
