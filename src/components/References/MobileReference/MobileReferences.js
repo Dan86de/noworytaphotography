@@ -73,8 +73,6 @@ class MobileReference extends Component {
     return (
       <StyledWrapper>
         <Carousel
-          enableAutoPlay
-          autoPlaySpeed={10000}
           itemsToShow={1}
           showArrows={false}
           renderPagination={({ pages, activePage, onClick }) => {

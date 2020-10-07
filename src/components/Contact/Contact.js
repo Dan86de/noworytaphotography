@@ -253,6 +253,9 @@ class Contact extends React.Component {
   render() {
     const { status } = this.state
     const email = 'https://formspree.io/xeqllqgr'
+    const contactMsg = this.props.intl.formatMessage({
+      id: 'CONTACTSECTION.ContactMsg',
+    })
 
     return (
       <FormWrapper id="contact">
@@ -260,7 +263,12 @@ class Contact extends React.Component {
           {this.props.intl.formatMessage({ id: 'CONTACTSECTION.Contact' })}
         </h1>
         <p>
-          {this.props.intl.formatMessage({ id: 'CONTACTSECTION.ContactMsg' })}
+          <p
+            dangerouslySetInnerHTML={{
+              __html: contactMsg,
+            }}
+          ></p>
+          {/* {this.props.intl.formatMessage({ id: 'CONTACTSECTION.ContactMsg' })} */}
           <br></br>
           <br></br>
           <span>contact@noworytaphotography.com</span>{' '}

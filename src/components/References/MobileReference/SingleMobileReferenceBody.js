@@ -8,8 +8,8 @@ const StyledWrapper = styled.div`
 const ReferenceBody = styled.div`
   h3 {
     margin: 0;
+    font-size: 32px;
     font-family: ff-market-web;
-    font-size: 24px;
     text-align: center;
   }
   span {
@@ -19,9 +19,10 @@ const ReferenceBody = styled.div`
   }
   p {
     font-weight: 500;
-    font-size: 11px;
-    @media (min-width: 320px) {
-      font-size: 12px;
+  }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 40px;
     }
   }
 `
@@ -38,10 +39,12 @@ const ReferenceNavElement = styled.div`
     background-color: #4e625b;
   }
   h4 {
-    margin: 1rem;
+    margin: 0;
+    margin-top: 1rem;
   }
   span {
     font-size: 10px;
+    margin: 0;
   }
 `
 
